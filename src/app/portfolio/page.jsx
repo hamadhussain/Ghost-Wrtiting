@@ -10478,289 +10478,289 @@ const UI = [
   className="cus-overlay"
   style={{ display: isOpen ? "block" : "none" }}
 />
-      <iframe
-        height={0}
-        width={0}
-        style={{ display: "none", visibility: "hidden" }}
-      />
-      <div id="wl8a1qgod97o1757974395354" className="widget-visible">
-        <iframe
-          src="about:blank"
-          frameBorder={0}
-          scrolling="no"
-          width="64px"
-          height="60px"
-          style={{
-            outline: "none !important",
-            visibility: "visible !important",
-            resize: "none !important",
-            boxShadow: "none !important",
-            overflow: "visible !important",
-            background: "none !important",
-            opacity: "1 !important",
-            filter: "alpha(opacity=100) !important",
-            msFilter:
-              "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
-            MzOpacity: "1 !important",
-            KhtmlOpacity: "1 !important",
-            top: "auto !important",
-            right: "20px !important",
-            bottom: "20px !important",
-            left: "auto !important",
-            position: "fixed !important",
-            border: "0 !important",
-            minHeight: "60px !important",
-            minWidth: "64px !important",
-            maxHeight: "60px !important",
-            maxWidth: "64px !important",
-            padding: "0 !important",
-            margin: "0 !important",
-            MozTransitionProperty: "none !important",
-            WebkitTransitionProperty: "none !important",
-            OTransitionProperty: "none !important",
-            transitionProperty: "none !important",
-            transform: "none !important",
-            WebkitTransform: "none !important",
-            msTransform: "none !important",
-            width: "64px !important",
-            height: "60px !important",
-            display: "block !important",
-            zIndex: "1000003 !important",
-            backgroundColor: "transparent !important",
-            cursor: "none !important",
-            float: "none !important",
-            borderRadius: "unset !important",
-            pointerEvents: "auto !important",
-            clip: "auto !important",
-            colorScheme: "light !important",
-          }}
-          id="y0bpvg0ldlb1757974395507"
-          className=""
-          title="chat widget"
-        />
-        <iframe
-          src="about:blank"
-          frameBorder={0}
-          scrolling="no"
-          width="350px"
-          height="520px"
-          style={{
-            outline: "none !important",
-            visibility: "visible !important",
-            resize: "none !important",
-            boxShadow: "none !important",
-            overflow: "visible !important",
-            background: "none !important",
-            opacity: "1 !important",
-            filter: "alpha(opacity=100) !important",
-            msFilter:
-              "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
-            MzOpacity: "1 !important",
-            KhtmlOpacity: "1 !important",
-            top: "auto !important",
-            right: "20px !important",
-            bottom: "98px !important",
-            left: "auto !important",
-            position: "fixed !important",
-            border: "0 !important",
-            minHeight: "520px !important",
-            minWidth: "350px !important",
-            maxHeight: "520px !important",
-            maxWidth: "350px !important",
-            padding: "0 !important",
-            margin: "0 !important",
-            MozTransitionProperty: "none !important",
-            WebkitTransitionProperty: "none !important",
-            OTransitionProperty: "none !important",
-            transitionProperty: "none !important",
-            transform: "none !important",
-            WebkitTransform: "none !important",
-            msTransform: "none !important",
-            width: "350px !important",
-            height: "520px !important",
-            display: "none !important",
-            zIndex: "1000002 !important",
-            backgroundColor: "transparent !important",
-            cursor: "none !important",
-            float: "none !important",
-            borderRadius: "18px !important",
-            pointerEvents: "auto !important",
-            clip: "auto !important",
-            colorScheme: "light !important",
-          }}
-          id="fvr008jeaqa81757974395704"
-          className=""
-          title="chat widget"
-        />
-        <iframe
-          src="about:blank"
-          frameBorder={0}
-          scrolling="no"
-          height="30px"
-          style={{
-            outline: "none !important",
-            visibility: "visible !important",
-            resize: "none !important",
-            boxShadow: "none !important",
-            overflow: "visible !important",
-            background: "none !important",
-            opacity: "1 !important",
-            filter: "alpha(opacity=100) !important",
-            msFilter:
-              "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
-            MzOpacity: "1 !important",
-            KhtmlOpacity: "1 !important",
-            top: "auto !important",
-            right: "20px !important",
-            bottom: "30px !important",
-            left: "auto !important",
-            position: "fixed !important",
-            border: "0 !important",
-            minHeight: "45px !important",
-            minWidth: "350px !important",
-            maxHeight: "45px !important",
-            maxWidth: "350px !important",
-            padding: "0 !important",
-            margin: "0 !important",
-            MozTransitionProperty: "none !important",
-            WebkitTransitionProperty: "none !important",
-            OTransitionProperty: "none !important",
-            transitionProperty: "none !important",
-            transform: "none !important",
-            WebkitTransform: "none !important",
-            msTransform: "none !important",
-            width: "350px !important",
-            height: "45px !important",
-            display: "none !important",
-            zIndex: "1000002 !important",
-            backgroundColor: "transparent !important",
-            cursor: "none !important",
-            float: "none !important",
-            borderRadius: "unset !important",
-            pointerEvents: "auto !important",
-            clip: "auto !important",
-            colorScheme: "light !important",
-          }}
-          id="b1ut2asqq1bk1757974395752"
-          className=""
-          title="chat widget"
-        />
-        <iframe
-          src="about:blank"
-          frameBorder={0}
-          scrolling="no"
-          width="360px"
-          height="145px"
-          style={{
-            outline: "none !important",
-            visibility: "visible !important",
-            resize: "none !important",
-            boxShadow: "none !important",
-            overflow: "visible !important",
-            background: "none !important",
-            opacity: "1 !important",
-            filter: "alpha(opacity=100) !important",
-            msFilter:
-              "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
-            MzOpacity: "1 !important",
-            KhtmlOpacity: "1 !important",
-            top: "auto !important",
-            right: "20px !important",
-            bottom: 90,
-            left: "auto !important",
-            position: "fixed !important",
-            border: "0 !important",
-            minHeight: "145px !important",
-            minWidth: "360px !important",
-            maxHeight: "145px !important",
-            maxWidth: "360px !important",
-            padding: "0 !important",
-            margin: "0 !important",
-            MozTransitionProperty: "none !important",
-            WebkitTransitionProperty: "none !important",
-            OTransitionProperty: "none !important",
-            transitionProperty: "none !important",
-            transform: "none !important",
-            WebkitTransform: "none !important",
-            msTransform: "none !important",
-            width: "360px !important",
-            height: "145px !important",
-            display: "none !important",
-            zIndex: "auto !important",
-            backgroundColor: "transparent !important",
-            cursor: "none !important",
-            float: "none !important",
-            borderRadius: "unset !important",
-            pointerEvents: "auto !important",
-            clip: "auto !important",
-            colorScheme: "light !important",
-          }}
-          id="inhjbis8531757974395591"
-          className=""
-          title="chat widget"
-        />
-        <iframe
-          src="about:blank"
-          frameBorder={0}
-          scrolling="no"
-          width="124px"
-          height="95px"
-          style={{
-            outline: "none !important",
-            visibility: "visible !important",
-            resize: "none !important",
-            boxShadow: "none !important",
-            overflow: "visible !important",
-            background: "none !important",
-            opacity: "1 !important",
-            filter: "alpha(opacity=100) !important",
-            msFilter:
-              "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
-            MzOpacity: "1 !important",
-            KhtmlOpacity: "1 !important",
-            top: "auto !important",
-            right: "0px !important",
-            bottom: "30px !important",
-            left: "auto !important",
-            position: "fixed !important",
-            border: "0 !important",
-            minHeight: "95px !important",
-            minWidth: "124px !important",
-            maxHeight: "95px !important",
-            maxWidth: "124px !important",
-            padding: "0 !important",
-            margin: "0px 0 0 0 !important",
-            MozTransitionProperty: "none !important",
-            WebkitTransitionProperty: "none !important",
-            OTransitionProperty: "none !important",
-            transitionProperty: "none !important",
-            transform: "rotate(0deg) translateZ(0)",
-            WebkitTransform: "rotate(0deg) translateZ(0)",
-            msTransform: "rotate(0deg) translateZ(0)",
-            width: "124px !important",
-            height: "95px !important",
-            display: "block !important",
-            zIndex: "1000004 !important",
-            backgroundColor: "transparent !important",
-            cursor: "none !important",
-            float: "none !important",
-            borderRadius: "unset !important",
-            pointerEvents: "auto !important",
-            clip: "auto !important",
-            colorScheme: "light !important",
-            MozTransform: "rotate(0deg) translateZ(0)",
-            OTransform: "rotate(0deg) translateZ(0)",
-            transformOrigin: 0,
-            MozTransformOrigin: 0,
-            WebkitTransformOrigin: 0,
-            OTransformOrigin: 0,
-            msTransformOrigin: 0,
-          }}
-          id="jqfjgc91sujg1757974395551"
-          className=""
-          title="chat widget"
-        />
-      </div>
+      // <iframe
+      //   height={0}
+      //   width={0}
+      //   style={{ display: "none", visibility: "hidden" }}
+      // />
+      // <div id="wl8a1qgod97o1757974395354" className="widget-visible">
+      //   <iframe
+      //     src="about:blank"
+      //     frameBorder={0}
+      //     scrolling="no"
+      //     width="64px"
+      //     height="60px"
+      //     style={{
+      //       outline: "none !important",
+      //       visibility: "visible !important",
+      //       resize: "none !important",
+      //       boxShadow: "none !important",
+      //       overflow: "visible !important",
+      //       background: "none !important",
+      //       opacity: "1 !important",
+      //       filter: "alpha(opacity=100) !important",
+      //       msFilter:
+      //         "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
+      //       MzOpacity: "1 !important",
+      //       KhtmlOpacity: "1 !important",
+      //       top: "auto !important",
+      //       right: "20px !important",
+      //       bottom: "20px !important",
+      //       left: "auto !important",
+      //       position: "fixed !important",
+      //       border: "0 !important",
+      //       minHeight: "60px !important",
+      //       minWidth: "64px !important",
+      //       maxHeight: "60px !important",
+      //       maxWidth: "64px !important",
+      //       padding: "0 !important",
+      //       margin: "0 !important",
+      //       MozTransitionProperty: "none !important",
+      //       WebkitTransitionProperty: "none !important",
+      //       OTransitionProperty: "none !important",
+      //       transitionProperty: "none !important",
+      //       transform: "none !important",
+      //       WebkitTransform: "none !important",
+      //       msTransform: "none !important",
+      //       width: "64px !important",
+      //       height: "60px !important",
+      //       display: "block !important",
+      //       zIndex: "1000003 !important",
+      //       backgroundColor: "transparent !important",
+      //       cursor: "none !important",
+      //       float: "none !important",
+      //       borderRadius: "unset !important",
+      //       pointerEvents: "auto !important",
+      //       clip: "auto !important",
+      //       colorScheme: "light !important",
+      //     }}
+      //     id="y0bpvg0ldlb1757974395507"
+      //     className=""
+      //     title="chat widget"
+      //   />
+      //   <iframe
+      //     src="about:blank"
+      //     frameBorder={0}
+      //     scrolling="no"
+      //     width="350px"
+      //     height="520px"
+      //     style={{
+      //       outline: "none !important",
+      //       visibility: "visible !important",
+      //       resize: "none !important",
+      //       boxShadow: "none !important",
+      //       overflow: "visible !important",
+      //       background: "none !important",
+      //       opacity: "1 !important",
+      //       filter: "alpha(opacity=100) !important",
+      //       msFilter:
+      //         "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
+      //       MzOpacity: "1 !important",
+      //       KhtmlOpacity: "1 !important",
+      //       top: "auto !important",
+      //       right: "20px !important",
+      //       bottom: "98px !important",
+      //       left: "auto !important",
+      //       position: "fixed !important",
+      //       border: "0 !important",
+      //       minHeight: "520px !important",
+      //       minWidth: "350px !important",
+      //       maxHeight: "520px !important",
+      //       maxWidth: "350px !important",
+      //       padding: "0 !important",
+      //       margin: "0 !important",
+      //       MozTransitionProperty: "none !important",
+      //       WebkitTransitionProperty: "none !important",
+      //       OTransitionProperty: "none !important",
+      //       transitionProperty: "none !important",
+      //       transform: "none !important",
+      //       WebkitTransform: "none !important",
+      //       msTransform: "none !important",
+      //       width: "350px !important",
+      //       height: "520px !important",
+      //       display: "none !important",
+      //       zIndex: "1000002 !important",
+      //       backgroundColor: "transparent !important",
+      //       cursor: "none !important",
+      //       float: "none !important",
+      //       borderRadius: "18px !important",
+      //       pointerEvents: "auto !important",
+      //       clip: "auto !important",
+      //       colorScheme: "light !important",
+      //     }}
+      //     id="fvr008jeaqa81757974395704"
+      //     className=""
+      //     title="chat widget"
+      //   />
+      //   <iframe
+      //     src="about:blank"
+      //     frameBorder={0}
+      //     scrolling="no"
+      //     height="30px"
+      //     style={{
+      //       outline: "none !important",
+      //       visibility: "visible !important",
+      //       resize: "none !important",
+      //       boxShadow: "none !important",
+      //       overflow: "visible !important",
+      //       background: "none !important",
+      //       opacity: "1 !important",
+      //       filter: "alpha(opacity=100) !important",
+      //       msFilter:
+      //         "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
+      //       MzOpacity: "1 !important",
+      //       KhtmlOpacity: "1 !important",
+      //       top: "auto !important",
+      //       right: "20px !important",
+      //       bottom: "30px !important",
+      //       left: "auto !important",
+      //       position: "fixed !important",
+      //       border: "0 !important",
+      //       minHeight: "45px !important",
+      //       minWidth: "350px !important",
+      //       maxHeight: "45px !important",
+      //       maxWidth: "350px !important",
+      //       padding: "0 !important",
+      //       margin: "0 !important",
+      //       MozTransitionProperty: "none !important",
+      //       WebkitTransitionProperty: "none !important",
+      //       OTransitionProperty: "none !important",
+      //       transitionProperty: "none !important",
+      //       transform: "none !important",
+      //       WebkitTransform: "none !important",
+      //       msTransform: "none !important",
+      //       width: "350px !important",
+      //       height: "45px !important",
+      //       display: "none !important",
+      //       zIndex: "1000002 !important",
+      //       backgroundColor: "transparent !important",
+      //       cursor: "none !important",
+      //       float: "none !important",
+      //       borderRadius: "unset !important",
+      //       pointerEvents: "auto !important",
+      //       clip: "auto !important",
+      //       colorScheme: "light !important",
+      //     }}
+      //     id="b1ut2asqq1bk1757974395752"
+      //     className=""
+      //     title="chat widget"
+      //   />
+      //   <iframe
+      //     src="about:blank"
+      //     frameBorder={0}
+      //     scrolling="no"
+      //     width="360px"
+      //     height="145px"
+      //     style={{
+      //       outline: "none !important",
+      //       visibility: "visible !important",
+      //       resize: "none !important",
+      //       boxShadow: "none !important",
+      //       overflow: "visible !important",
+      //       background: "none !important",
+      //       opacity: "1 !important",
+      //       filter: "alpha(opacity=100) !important",
+      //       msFilter:
+      //         "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
+      //       MzOpacity: "1 !important",
+      //       KhtmlOpacity: "1 !important",
+      //       top: "auto !important",
+      //       right: "20px !important",
+      //       bottom: 90,
+      //       left: "auto !important",
+      //       position: "fixed !important",
+      //       border: "0 !important",
+      //       minHeight: "145px !important",
+      //       minWidth: "360px !important",
+      //       maxHeight: "145px !important",
+      //       maxWidth: "360px !important",
+      //       padding: "0 !important",
+      //       margin: "0 !important",
+      //       MozTransitionProperty: "none !important",
+      //       WebkitTransitionProperty: "none !important",
+      //       OTransitionProperty: "none !important",
+      //       transitionProperty: "none !important",
+      //       transform: "none !important",
+      //       WebkitTransform: "none !important",
+      //       msTransform: "none !important",
+      //       width: "360px !important",
+      //       height: "145px !important",
+      //       display: "none !important",
+      //       zIndex: "auto !important",
+      //       backgroundColor: "transparent !important",
+      //       cursor: "none !important",
+      //       float: "none !important",
+      //       borderRadius: "unset !important",
+      //       pointerEvents: "auto !important",
+      //       clip: "auto !important",
+      //       colorScheme: "light !important",
+      //     }}
+      //     id="inhjbis8531757974395591"
+      //     className=""
+      //     title="chat widget"
+      //   />
+      //   <iframe
+      //     src="about:blank"
+      //     frameBorder={0}
+      //     scrolling="no"
+      //     width="124px"
+      //     height="95px"
+      //     style={{
+      //       outline: "none !important",
+      //       visibility: "visible !important",
+      //       resize: "none !important",
+      //       boxShadow: "none !important",
+      //       overflow: "visible !important",
+      //       background: "none !important",
+      //       opacity: "1 !important",
+      //       filter: "alpha(opacity=100) !important",
+      //       msFilter:
+      //         "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
+      //       MzOpacity: "1 !important",
+      //       KhtmlOpacity: "1 !important",
+      //       top: "auto !important",
+      //       right: "0px !important",
+      //       bottom: "30px !important",
+      //       left: "auto !important",
+      //       position: "fixed !important",
+      //       border: "0 !important",
+      //       minHeight: "95px !important",
+      //       minWidth: "124px !important",
+      //       maxHeight: "95px !important",
+      //       maxWidth: "124px !important",
+      //       padding: "0 !important",
+      //       margin: "0px 0 0 0 !important",
+      //       MozTransitionProperty: "none !important",
+      //       WebkitTransitionProperty: "none !important",
+      //       OTransitionProperty: "none !important",
+      //       transitionProperty: "none !important",
+      //       transform: "rotate(0deg) translateZ(0)",
+      //       WebkitTransform: "rotate(0deg) translateZ(0)",
+      //       msTransform: "rotate(0deg) translateZ(0)",
+      //       width: "124px !important",
+      //       height: "95px !important",
+      //       display: "block !important",
+      //       zIndex: "1000004 !important",
+      //       backgroundColor: "transparent !important",
+      //       cursor: "none !important",
+      //       float: "none !important",
+      //       borderRadius: "unset !important",
+      //       pointerEvents: "auto !important",
+      //       clip: "auto !important",
+      //       colorScheme: "light !important",
+      //       MozTransform: "rotate(0deg) translateZ(0)",
+      //       OTransform: "rotate(0deg) translateZ(0)",
+      //       transformOrigin: 0,
+      //       MozTransformOrigin: 0,
+      //       WebkitTransformOrigin: 0,
+      //       OTransformOrigin: 0,
+      //       msTransformOrigin: 0,
+      //     }}
+      //     id="jqfjgc91sujg1757974395551"
+      //     className=""
+      //     title="chat widget"
+      //   />
+      // </div>
     </>
   );
 }
