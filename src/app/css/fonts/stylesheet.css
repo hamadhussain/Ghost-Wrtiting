@@ -1,0 +1,131 @@
+/* @font-face {
+    font-family: 'Boiling';
+    src: url('Boiling-Black.eot');
+    src: local('Boiling Black'), local('Boiling-Black'),
+        url('Boiling-Black.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-Black.woff2') format('woff2'),
+        url('Boiling-Black.woff') format('woff'),
+        url('Boiling-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boiling';
+    src: url('Boiling-Light.eot');
+    src: local('Boiling Light'), local('Boiling-Light'),
+        url('Boiling-Light.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-Light.woff2') format('woff2'),
+        url('Boiling-Light.woff') format('woff'),
+        url('Boiling-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boiling';
+    src: url('Boiling-Bold.eot');
+    src: local('Boiling Bold'), local('Boiling-Bold'),
+        url('Boiling-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-Bold.woff2') format('woff2'),
+        url('Boiling-Bold.woff') format('woff'),
+        url('Boiling-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boiling';
+    src: url('Boiling-Thin.eot');
+    src: local('Boiling Thin'), local('Boiling-Thin'),
+        url('Boiling-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-Thin.woff2') format('woff2'),
+        url('Boiling-Thin.woff') format('woff'),
+        url('Boiling-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boiling Demi';
+    src: url('Boiling-DemiBold.eot');
+    src: local('Boiling Demi Bold'), local('Boiling-DemiBold'),
+        url('Boiling-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-DemiBold.woff2') format('woff2'),
+        url('Boiling-DemiBold.woff') format('woff'),
+        url('Boiling-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boiling Ultra';
+    src: url('Boiling-UltraLight.eot');
+    src: local('Boiling Ultra Light'), local('Boiling-UltraLight'),
+        url('Boiling-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-UltraLight.woff2') format('woff2'),
+        url('Boiling-UltraLight.woff') format('woff'),
+        url('Boiling-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boiling';
+    src: url('Boiling-Regular.eot');
+    src: local('Boiling'), local('Boiling-Regular'),
+        url('Boiling-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-Regular.woff2') format('woff2'),
+        url('Boiling-Regular.woff') format('woff'),
+        url('Boiling-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boiling Normal';
+    src: url('Boiling-Normal.eot');
+    src: local('Boiling Normal'), local('Boiling-Normal'),
+        url('Boiling-Normal.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-Normal.woff2') format('woff2'),
+        url('Boiling-Normal.woff') format('woff'),
+        url('Boiling-Normal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boiling';
+    src: url('Boiling-Medium.eot');
+    src: local('Boiling Medium'), local('Boiling-Medium'),
+        url('Boiling-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-Medium.woff2') format('woff2'),
+        url('Boiling-Medium.woff') format('woff'),
+        url('Boiling-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boiling Extra';
+    src: url('Boiling-ExtraLight.eot');
+    src: local('Boiling Extra Light'), local('Boiling-ExtraLight'),
+        url('Boiling-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-ExtraLight.woff2') format('woff2'),
+        url('Boiling-ExtraLight.woff') format('woff'),
+        url('Boiling-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boiling Semi';
+    src: url('Boiling-SemiBold.eot');
+    src: local('Boiling Semi Bold'), local('Boiling-SemiBold'),
+        url('Boiling-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Boiling-SemiBold.woff2') format('woff2'),
+        url('Boiling-SemiBold.woff') format('woff'),
+        url('Boiling-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+} */
