@@ -9,8 +9,109 @@ import  './../css/style.css'
 import { SiGooglemessages } from "react-icons/si";
 import { BsTelephone } from "react-icons/bs";
 const About = () => {
-    const [isActive, setIsActive] = useState(false);
-  const [isOpen, setIsOpen] = useState(true); // popup initially open
+  const [isActive, setIsActive] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [countryCode, setCountryCode] = useState("+92");
+  const [status, setStatus] = useState("");
+  const [service, setService] = useState("ghostwriting");
+  const [budget, setBudget] = useState("£999-£2000");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+    const cleanedNumber = phoneNumber.startsWith("0")
+      ? phoneNumber.slice(1)
+      : phoneNumber;
+
+    const fullNumber = `${countryCode}${cleanedNumber}`;
+
+    try {
+      const response = await fetch("/api/Menu", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          number: fullNumber,
+          budget,
+          service,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus("✅ Email sent successfully!");
+        setName("");
+        setEmail("");
+        setPhoneNumber("");
+        setCountryCode("+92");
+        console.log(status);
+      } else {
+        setStatus(`❌ Error: ${data.error || "Failed to send message"}`);
+                console.log(status);
+
+      }
+    } catch (error) {
+      setStatus(`❌ Error: ${error.message}`);
+    }
+  };
+  const Submit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+    const cleanedNumber = phoneNumber.startsWith("0")
+      ? phoneNumber.slice(1)
+      : phoneNumber;
+
+    const fullNumber = `${countryCode}${cleanedNumber}`;
+
+    try {
+      const response = await fetch("/api/Simple", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          number: fullNumber,
+          message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus("✅ Email sent successfully!");
+        setName("");
+        setEmail("");
+        setPhoneNumber("");
+        setMessage("");
+        setCountryCode("+92");
+      } else {
+        setStatus(`❌ Error: ${data.error || "Failed to send message"}`);
+      }
+    } catch (error) {
+      setStatus(`❌ Error: ${error.message}`);
+    }
+  };
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const countries = [
+    { code: "+92", name: "Pakistan", flag: "pk" },
+    { code: "+1", name: "United States", flag: "us" },
+    { code: "+44", name: "United Kingdom", flag: "gb" },
+    { code: "+91", name: "India", flag: "in" },
+  ];
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleCountrySelect = (code) => {
+    setCountryCode(code);
+    setIsDropdownOpen(false); // Close the dropdown after selection
+  };
 
   return (
 <>
@@ -44,104 +145,153 @@ const About = () => {
                 HIRE A GHOSTWRITER:
                 <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING NEEDS
               </h3>
-              <form
-                action="webpages/bottomFormController.php"
-                className="contact-form"
-                method="POST"
-              >
-                <div className="row">
-                  <div className="col-md-6 ">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      required=""
-                      name="Name"
-                    />
-                  </div>
-                  <div className="col-md-6 ">
-                    <input
-                      type="email"
-                      name="Email"
-                      required=""
-                      placeholder="Your Email"
-                    />
-                  </div>
-                  <div className="col-md-12 ">
-                    <input
-                      name="Number"
-                      className="phone phone-country"
-                      required=""
-                      id="phone-coun"
-                      type="text"
-                      minLength={10}
-                      maxLength={10}
-                      autoComplete="off"
-                      // onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) )"
-                      placeholder="Contact Number"
-                      style={{ marginBottom: "10px!important" }}
-                    />
-                  </div>
-                  <div className="col-md-6 ">
-                    <div className="form-floating">
-                     <select
-  className="form-select"
-  id="floatingSelect"
-  required
-  name="Services"
-  aria-label="Floating label select example"
-  defaultValue="ghostwriting"
->
-  <option value="ghostwriting">ghostwriting</option>
-  <option value="book cover">book cover</option>
-  <option value="illustration">illustration</option>
-  <option value="publishing">publishing</option>
-</select>
+                <form className="contact-form" onSubmit={handleSubmit}>
+                        <div className="row">
+                          <div className="col-md-6 ">
+                            <input
+                              type="text"
+                              placeholder="Your Name"
+                              minLength={2}
+                              required
+                              value={name}
+                              onChange={(e) => setName(e.target.value)}
+                            />
+                          </div>
+                          <div className="col-md-6 ">
+                            <input
+                              type="email"
+                              placeholder="Your Email"
+                              required
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                            />
+                          </div>
+                          <div className="col-lg-12">
+                            <div className="fldset">
+                              <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
+                                <div className="flag-container">
+                                  {/* Country Code and Flag */}
+                                  <div
+                                    className="selected-flag"
+                                    onClick={toggleDropdown} // Toggle dropdown on click
+                                    tabIndex={0}
+                                    title={`${countryCode}`}
+                                  >
+                                    <div
+                                      className={`iti-flag ${
+                                        countries.find(
+                                          (c) => c.code === countryCode
+                                        )?.flag
+                                      }`}
+                                    />
+                                    <div className="selected-dial-code">
+                                      {countryCode}
+                                    </div>
+                                    <div className="iti-arrow" />
+                                  </div>
 
-                      <label htmlFor="floatingSelect" style={{ color: "#000" }}>
-                        Select Service
-                      </label>
-                    </div>
-                  </div>
-                  <div className="col-md-6 ">
-                    <div className="form-floating">
-                     <select
-  className="form-select"
-  id="floatingSelect"
-  required
-  name="budget"
-  aria-label="Floating label select example"
-  defaultValue="£999-£2000"
->
-  <option value="£999-£2000">£999-£2000</option>
-  <option value="£2000-£3000">£2000-£3000</option>
-  <option value="£3000-£4000">£3000-£4000</option>
-  <option value="£4000-£5000">£4000-£5000</option>
-</select>
+                                  {/* Country Dropdown List (visible when dropdown is open) */}
+                                  {isDropdownOpen && (
+                                    <ul className="country-list">
+                                      {countries.map((country) => (
+                                        <li
+                                          key={country.code}
+                                          className="country"
+                                          onClick={() =>
+                                            handleCountrySelect(country.code)
+                                          } // Handle country selection
+                                        >
+                                          <div className="flag-box">
+                                            <div
+                                              className={`iti-flag ${country.flag}`}
+                                            />
+                                          </div>
+                                          <span className="country-name">
+                                            {country.name}
+                                          </span>
+                                          <span className="dial-code">
+                                            {country.code}
+                                          </span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  )}
+                                </div>
 
-                      <label htmlFor="floatingSelect" style={{ color: "#000" }}>
-                        Select Budget
-                      </label>
-                    </div>
-                  </div>
-                  <div className="col-md-12">
-                    {/*<a href="javascript:;" class='submit'>Submit<i class="fa-solid fa-arrow-right"></i></a>*/}
-                    <button type="submit" className="submit">
-                      Submit
-                      <i className="fa-solid fa-arrow-right" />
-                    </button>
-                  </div>
-                </div>
-                <input type="hidden" name="ctry" defaultValue="" />
-                <input type="hidden" name="cip" defaultValue="" />
-                <input type="hidden" name="pc" defaultValue="" />
-                <input type="hidden" name="hiddencapcha" defaultValue="" />
-                <input
-                  type="hidden"
-                  id="location"
-                  name="locationURL"
-                  defaultValue="https://hireaghostwriter.co.uk/"
-                />
-              </form>
+                                {/* Phone Number Input */}
+                                <input
+                                  type="tel"
+                                  placeholder="Contact Number"
+                                  required
+                                  minLength={7}
+                                  maxLength={15}
+                                  value={phoneNumber}
+                                  onChange={(e) =>
+                                    setPhoneNumber(e.target.value)
+                                  }
+                                  style={{ flex: 1 }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-floating">
+                              <label
+                                htmlFor="floatingSelect"
+                                style={{ color: "#000", marginTop: "10px" }}
+                              >
+                                Select Service
+                              </label>
+                              <select
+                                className="form-select"
+                                id="floatingSelect"
+                                required
+                                name="Services"
+                                value={service} // Bind service to state
+                                onChange={(e) => setService(e.target.value)} // Update service on change
+                              >
+                                <option value="ghostwriting">
+                                  ghostwriting
+                                </option>
+                                <option value="book cover">book cover</option>
+                                <option value="illustration">
+                                  illustration
+                                </option>
+                                <option value="publishing">publishing</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-floating">
+                              <label
+                                htmlFor="floatingSelect"
+                                style={{ color: "#000", marginTop: "10px" }}
+                              >
+                                Select Budget
+                              </label>
+                              <select
+                                className="form-select"
+                                id="floatingSelect"
+                                required
+                                name="budget"
+                                value={budget} // Bind budget to state
+                                onChange={(e) => setBudget(e.target.value)} // Update budget on change
+                              >
+                                <option value="£999-£2000">£999-£2000</option>
+                                <option value="£2000-£3000">£2000-£3000</option>
+                                <option value="£3000-£4000">£3000-£4000</option>
+                                <option value="£4000-£5000">£4000-£5000</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div className="col-md-12">
+                            <button type="submit" className="submit">
+                              Submit
+                              <i className="fa-solid fa-arrow-right" />
+                            </button>
+                          </div>
+                        </div>
+                      </form>
             </div>
           </div>
           <div className="col-md-6">
@@ -1870,101 +2020,153 @@ const About = () => {
               HIRE A GHOSTWRITER:
               <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING NEEDS
             </h3>
-            <form
-              action="webpages/bottomFormController.php"
-              className="contact-form"
-              method="POST"
-            >
-              <div className="row">
-                <div className="col-md-6 ">
-                  <input type="text" placeholder="Full Name" name="Name" />
-                </div>
-                <div className="col-md-6 ">
-                  <input
-                    type="email"
-                    name="Email"
-                    placeholder="Email Address*"
-                  />
-                </div>
-                <div className="col-md-12 ">
-                  <input
-                    name="Number"
-                    id="phone-country"
-                    className="phone-c phone-country"
-                    required=""
-                    type="text"
-                    minLength={10}
-                    maxLength={10}
-                    autoComplete="off"
-                    // onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) )"
-                    placeholder="Phone Number"
-                    style={{ marginBottom: "10px!important" }}
-                  />
-                </div>
-                <div className="col-md-6 ">
-                  <div className="form-floating">
-                   <select
-  className="form-select"
-  name="Services"
-  id="floatingSelectServices"
-  required
-  aria-label="Floating label select example"
-  defaultValue="ghostwriting"
->
-  <option value="ghostwriting">ghostwriting</option>
-  <option value="book cover">book cover</option>
-  <option value="illustration">illustration</option>
-  <option value="publishing">publishing</option>
-</select>
+              <form className="contact-form" onSubmit={handleSubmit}>
+                        <div className="row">
+                          <div className="col-md-6 ">
+                            <input
+                              type="text"
+                              placeholder="Your Name"
+                              minLength={2}
+                              required
+                              value={name}
+                              onChange={(e) => setName(e.target.value)}
+                            />
+                          </div>
+                          <div className="col-md-6 ">
+                            <input
+                              type="email"
+                              placeholder="Your Email"
+                              required
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                            />
+                          </div>
+                          <div className="col-lg-12">
+                            <div className="fldset">
+                              <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
+                                <div className="flag-container">
+                                  {/* Country Code and Flag */}
+                                  <div
+                                    className="selected-flag"
+                                    onClick={toggleDropdown} // Toggle dropdown on click
+                                    tabIndex={0}
+                                    title={`${countryCode}`}
+                                  >
+                                    <div
+                                      className={`iti-flag ${
+                                        countries.find(
+                                          (c) => c.code === countryCode
+                                        )?.flag
+                                      }`}
+                                    />
+                                    <div className="selected-dial-code">
+                                      {countryCode}
+                                    </div>
+                                    <div className="iti-arrow" />
+                                  </div>
 
-                    <label htmlFor="floatingSelect" style={{ color: "#000" }}>
-                      Select Service
-                    </label>
-                  </div>
-                </div>
-                <div className="col-md-6 ">
-                  <div className="form-floating">
-                   <select
-  className="form-select"
-  id="floatingSelectBudget"
-  name="budget"
-  aria-label="Floating label select example"
-  defaultValue="£999-£2000"
->
-  <option value="£999-£2000">£999-£2000</option>
-  <option value="£2000-£3000">£2000-£3000</option>
-  <option value="£3000-£4000">£3000-£4000</option>
-  <option value="£4000-£5000">£4000-£5000</option>
-</select>
+                                  {/* Country Dropdown List (visible when dropdown is open) */}
+                                  {isDropdownOpen && (
+                                    <ul className="country-list">
+                                      {countries.map((country) => (
+                                        <li
+                                          key={country.code}
+                                          className="country"
+                                          onClick={() =>
+                                            handleCountrySelect(country.code)
+                                          } // Handle country selection
+                                        >
+                                          <div className="flag-box">
+                                            <div
+                                              className={`iti-flag ${country.flag}`}
+                                            />
+                                          </div>
+                                          <span className="country-name">
+                                            {country.name}
+                                          </span>
+                                          <span className="dial-code">
+                                            {country.code}
+                                          </span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  )}
+                                </div>
 
-                    <label htmlFor="floatingSelect" style={{ color: "#000" }}>
-                      Select Budget
-                    </label>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <button type="submit" className="submit">
-                    Submit
-                    <i className="fa-solid fa-arrow-right my-icon" />
-                  </button>
-                  {/*<a href="javascript:;" class='submit'>Submit<i class="fa-solid fa-arrow-right"></i></a>*/}
-                </div>
-              </div>
-              <input
-                type="hidden"
-                name="ctry"
-                defaultValue="Pakistan Pakistan Pakistan Pakistan Pakistan "
-              />
-              <input type="hidden" name="cip" defaultValue="192.140.145.64" />
-              <input type="hidden" name="pc" defaultValue="+92+92+92+92+92" />
-              <input type="hidden" name="hiddencapcha" defaultValue="" />
-              <input
-                type="hidden"
-                id="location"
-                name="locationURL"
-                defaultValue="http://hireaghostwriter.co.uk/"
-              />
-            </form>
+                                {/* Phone Number Input */}
+                                <input
+                                  type="tel"
+                                  placeholder="Contact Number"
+                                  required
+                                  minLength={7}
+                                  maxLength={15}
+                                  value={phoneNumber}
+                                  onChange={(e) =>
+                                    setPhoneNumber(e.target.value)
+                                  }
+                                  style={{ flex: 1 }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-floating">
+                              <label
+                                htmlFor="floatingSelect"
+                                style={{ color: "#000", marginTop: "10px" }}
+                              >
+                                Select Service
+                              </label>
+                              <select
+                                className="form-select"
+                                id="floatingSelect"
+                                required
+                                name="Services"
+                                value={service} // Bind service to state
+                                onChange={(e) => setService(e.target.value)} // Update service on change
+                              >
+                                <option value="ghostwriting">
+                                  ghostwriting
+                                </option>
+                                <option value="book cover">book cover</option>
+                                <option value="illustration">
+                                  illustration
+                                </option>
+                                <option value="publishing">publishing</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-floating">
+                              <label
+                                htmlFor="floatingSelect"
+                                style={{ color: "#000", marginTop: "10px" }}
+                              >
+                                Select Budget
+                              </label>
+                              <select
+                                className="form-select"
+                                id="floatingSelect"
+                                required
+                                name="budget"
+                                value={budget} // Bind budget to state
+                                onChange={(e) => setBudget(e.target.value)} // Update budget on change
+                              >
+                                <option value="£999-£2000">£999-£2000</option>
+                                <option value="£2000-£3000">£2000-£3000</option>
+                                <option value="£3000-£4000">£3000-£4000</option>
+                                <option value="£4000-£5000">£4000-£5000</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div className="col-md-12">
+                            <button type="submit" className="submit">
+                              Submit
+                              <i className="fa-solid fa-arrow-right" />
+                            </button>
+                          </div>
+                        </div>
+                      </form>
           </div>
         </div>
       </div>
@@ -2082,35 +2284,34 @@ const About = () => {
                     className="cmxform"
                     id="bannerform"
                     method="POST"
-                    action="webpages/bottomFormController.php"
+                    onSubmit={Submit}
                   >
                     <div className="row">
                       <div className="col-lg-12">
                         <div className="fldset">
                           <input
-                            // onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
-                            id="username"
-                            name="Name"
-                            minLength={2}
                             type="text"
                             placeholder="Your Name"
-                            required=""
+                            minLength={2}
+                            required
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                           />
                         </div>
                       </div>
                       <div className="col-lg-12">
                         <div className="fldset">
                           <input
-                            id="cemail"
                             type="email"
-                            name="Email"
                             placeholder="Your Email"
-                            required=""
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                         </div>
                       </div>
                       <div className="col-lg-12">
-                        <div className="fldset">
+                        {/* <div className="fldset">
                           <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
                             <div className="flag-container">
                               <div
@@ -2122,7 +2323,7 @@ const About = () => {
                                 <div className="selected-dial-code">+92</div>
                                 <div className="iti-arrow" />
                               </div>
-                              <ul className="country-list hide">
+                              <ul className="country-list ">
                                 <li
                                   className="country preferred first"
                                   data-dial-code={1}
@@ -5019,18 +5220,114 @@ const About = () => {
                                   <span className="dial-code">+263</span>
                                 </li>
                               </ul>
+                                          <select
+              value={countryCode}
+              onChange={(e) => setCountryCode(e.target.value)}
+              required
+              style={{ width: '120px' }}
+            >
+              <option value="+92">Pakistan (+92)</option>
+              <option value="+1">United States (+1)</option>
+              <option value="+44">United Kingdom (+44)</option>
+              <option value="+91">India (+91)</option>
+            </select>
                             </div>
                             <input
-                              name="Number"
-                              id="phone-country"
-                              className="phone-float"
-                              required=""
-                              type="text"
-                              minLength={10}
-                              maxLength={10}
-                              autoComplete="off"
-                              // onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) )"
+              type="tel"
+              placeholder="Contact Number"
+              required
+              minLength={7}
+              maxLength={15}
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              style={{ flex: 1 }}
+            />
+                          </div>
+                        </div> */}
+                        {/* <div className="fldset text-black" style={{ display: 'flex',color:'black', gap: '10px' }}>
+            <select
+              value={countryCode}
+              onChange={(e) => setCountryCode(e.target.value)}
+              required
+              style={{ width: '120px' }}
+            >
+              <option value="+92">Pakistan (+92)</option>
+              <option value="+1">United States (+1)</option>
+              <option value="+44">United Kingdom (+44)</option>
+              <option value="+91">India (+91)</option>
+            </select>
+            <input
+              type="tel"
+              placeholder="Contact Number"
+              required
+              minLength={7}
+              maxLength={15}
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              style={{ flex: 1 }}
+            />
+          </div> */}
+                        <div className="fldset">
+                          <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
+                            <div className="flag-container">
+                              {/* Country Code and Flag */}
+                              <div
+                                className="selected-flag"
+                                onClick={toggleDropdown} // Toggle dropdown on click
+                                tabIndex={0}
+                                title={`${countryCode}`}
+                              >
+                                <div
+                                  className={`iti-flag ${
+                                    countries.find(
+                                      (c) => c.code === countryCode
+                                    )?.flag
+                                  }`}
+                                />
+                                <div className="selected-dial-code">
+                                  {countryCode}
+                                </div>
+                                <div className="iti-arrow" />
+                              </div>
+
+                              {/* Country Dropdown List (visible when dropdown is open) */}
+                              {isDropdownOpen && (
+                                <ul className="country-list">
+                                  {countries.map((country) => (
+                                    <li
+                                      key={country.code}
+                                      className="country"
+                                      onClick={() =>
+                                        handleCountrySelect(country.code)
+                                      } // Handle country selection
+                                    >
+                                      <div className="flag-box">
+                                        <div
+                                          className={`iti-flag ${country.flag}`}
+                                        />
+                                      </div>
+                                      <span className="country-name">
+                                        {country.name}
+                                      </span>
+                                      <span className="dial-code">
+                                        {country.code}
+                                      </span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
+
+                            {/* Phone Number Input */}
+                            <input
+                              type="tel"
                               placeholder="Contact Number"
+                              required
+                              minLength={7}
+                              maxLength={15}
+                              value={phoneNumber}
+                              onChange={(e) => setPhoneNumber(e.target.value)}
+                              style={{ flex: 1 }}
                             />
                           </div>
                         </div>
@@ -5038,23 +5335,25 @@ const About = () => {
                       <div className="col-lg-12">
                         <div className="fldset">
                           <textarea
-                            name="Message"
-                            id=""
-                            rows={7}
                             placeholder="Talk About Your Project"
-                            defaultValue={""}
+                            rows={7}
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            required
                           />
                         </div>
                       </div>
                       <div className="col-lg-12">
                         <div className="fldset">
-                          <input
+                          {/* <input
                             name="submit"
                             type="submit"
                             placeholder="Connect With Us"
                             required=""
-                          />
-                          <input
+                          /> */}
+                          <input type="submit" value="Connect With Us" />
+
+                          {/* <input
                             type="hidden"
                             name="hiddencapcha"
                             defaultValue=""
@@ -5085,7 +5384,7 @@ const About = () => {
                             id="location"
                             name="Form_name"
                             defaultValue="Floating Form"
-                          />
+                          /> */}
                         </div>
                       </div>
                     </div>
@@ -5117,109 +5416,153 @@ const About = () => {
             HIRE A GHOSTWRITER:
             <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING NEEDS
           </h3>
-          <form
-            action="webpages/bottomFormController.php"
-            className="contact-form"
-            method="POST"
-          >
-            <div className="row">
-              <div className="col-md-6 ">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  required=""
-                  name="Name"
-                />
-              </div>
-              <div className="col-md-6 ">
-                <input
-                  type="email"
-                  name="Email"
-                  required=""
-                  placeholder="Email Address*"
-                />
-              </div>
-              <div className="col-md-12 ">
-                <input
-                  name="Number"
-                  id="phone-country"
-                  className="phone-popup phone-country"
-                  required=""
-                  type="text"
-                  minLength={10}
-                  maxLength={10}
-                  autoComplete="off"
-                  // onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) )"
-                  placeholder="Phone Number"
-                  style={{ marginBottom: "10px!important" }}
-                />
-              </div>
-              <div className="col-md-6 ">
-                <div className="form-floating">
-                  {/* <select
-                    className="form-select"
-                    id="floatingSelect"
-                    name="Services"
-                    required=""
-                    aria-label="Floating label select example"
-                  >
-                    <option selected="" value="ghostwriting">
-                      ghostwriting
-                    </option>
-                    <option value="book cover">book cover</option>
-                    <option value="illustration">illustration</option>
-                    <option value="publishing">publishing</option>
-                  </select> */}
-                  <label htmlFor="floatingSelect" style={{ color: "#000" }}>
-                    Select Service
-                  </label>
-                </div>
-              </div>
-              <div className="col-md-6 ">
-                <div className="form-floating">
-                  {/* <select
-                    className="form-select"
-                    id="floatingSelect"
-                    name="budget"
-                    required=""
-                    aria-label="Floating label select example"
-                  >
-                    <option selected="" value="£999-£2000">
-                      £999-£2000
-                    </option>
-                    <option value="£2000-£3000">£2000-£3000</option>
-                    <option value="£3000-£4000">£3000-£4000</option>
-                    <option value="£4000-£5000">£4000-£5000</option>
-                  </select> */}
-                  <label htmlFor="floatingSelect" style={{ color: "#000" }}>
-                    Select Budget
-                  </label>
-                </div>
-              </div>
-              <input type="hidden" name="hiddencapcha" defaultValue="" />
-              <input type="hidden" name="ctry" defaultValue="" />
-              <input type="hidden" name="pc" defaultValue="" />
-              <input type="hidden" name="cip" />
-              <input
-                type="hidden"
-                id="location"
-                name="locationURL"
-                defaultValue="http://hireaghostwriter.co.uk/book-cover-design.php"
-              />
-              <input
-                type="hidden"
-                id="location"
-                name="Form_name"
-                defaultValue="Floating Form"
-              />
-              <div className="col-md-12">
-                <button type="submit" className="submit">
-                  Submit
-                  <i className="fa-solid fa-arrow-right my-icon" />
-                </button>
-              </div>
-            </div>
-          </form>
+        <form className="contact-form" onSubmit={handleSubmit}>
+                        <div className="row">
+                          <div className="col-md-6 ">
+                            <input
+                              type="text"
+                              placeholder="Your Name"
+                              minLength={2}
+                              required
+                              value={name}
+                              onChange={(e) => setName(e.target.value)}
+                            />
+                          </div>
+                          <div className="col-md-6 ">
+                            <input
+                              type="email"
+                              placeholder="Your Email"
+                              required
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                            />
+                          </div>
+                          <div className="col-lg-12">
+                            <div className="fldset">
+                              <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
+                                <div className="flag-container">
+                                  {/* Country Code and Flag */}
+                                  <div
+                                    className="selected-flag"
+                                    onClick={toggleDropdown} // Toggle dropdown on click
+                                    tabIndex={0}
+                                    title={`${countryCode}`}
+                                  >
+                                    <div
+                                      className={`iti-flag ${
+                                        countries.find(
+                                          (c) => c.code === countryCode
+                                        )?.flag
+                                      }`}
+                                    />
+                                    <div className="selected-dial-code">
+                                      {countryCode}
+                                    </div>
+                                    <div className="iti-arrow" />
+                                  </div>
+
+                                  {/* Country Dropdown List (visible when dropdown is open) */}
+                                  {isDropdownOpen && (
+                                    <ul className="country-list">
+                                      {countries.map((country) => (
+                                        <li
+                                          key={country.code}
+                                          className="country"
+                                          onClick={() =>
+                                            handleCountrySelect(country.code)
+                                          } // Handle country selection
+                                        >
+                                          <div className="flag-box">
+                                            <div
+                                              className={`iti-flag ${country.flag}`}
+                                            />
+                                          </div>
+                                          <span className="country-name">
+                                            {country.name}
+                                          </span>
+                                          <span className="dial-code">
+                                            {country.code}
+                                          </span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  )}
+                                </div>
+
+                                {/* Phone Number Input */}
+                                <input
+                                  type="tel"
+                                  placeholder="Contact Number"
+                                  required
+                                  minLength={7}
+                                  maxLength={15}
+                                  value={phoneNumber}
+                                  onChange={(e) =>
+                                    setPhoneNumber(e.target.value)
+                                  }
+                                  style={{ flex: 1 }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-floating">
+                              <label
+                                htmlFor="floatingSelect"
+                                style={{ color: "#000", marginTop: "10px" }}
+                              >
+                                Select Service
+                              </label>
+                              <select
+                                className="form-select"
+                                id="floatingSelect"
+                                required
+                                name="Services"
+                                value={service} // Bind service to state
+                                onChange={(e) => setService(e.target.value)} // Update service on change
+                              >
+                                <option value="ghostwriting">
+                                  ghostwriting
+                                </option>
+                                <option value="book cover">book cover</option>
+                                <option value="illustration">
+                                  illustration
+                                </option>
+                                <option value="publishing">publishing</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-floating">
+                              <label
+                                htmlFor="floatingSelect"
+                                style={{ color: "#000", marginTop: "10px" }}
+                              >
+                                Select Budget
+                              </label>
+                              <select
+                                className="form-select"
+                                id="floatingSelect"
+                                required
+                                name="budget"
+                                value={budget} // Bind budget to state
+                                onChange={(e) => setBudget(e.target.value)} // Update budget on change
+                              >
+                                <option value="£999-£2000">£999-£2000</option>
+                                <option value="£2000-£3000">£2000-£3000</option>
+                                <option value="£3000-£4000">£3000-£4000</option>
+                                <option value="£4000-£5000">£4000-£5000</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div className="col-md-12">
+                            <button type="submit" className="submit">
+                              Submit
+                              <i className="fa-solid fa-arrow-right" />
+                            </button>
+                          </div>
+                        </div>
+                      </form>
         </div>
 
 <div
