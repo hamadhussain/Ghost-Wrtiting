@@ -135,11 +135,12 @@ const Contact = () => {
                       Services Just A Few Clicks Away
                     </p>
                     <br />
-                    <a href="javascript:;" className="view-pricing-txt various">
+                    <a                       onClick={() => setIsOpen(true)}
+className="view-pricing-txt various">
                       Get a quote
                       <i className="fa-solid fa-arrow-right" />
                     </a>
-                    <a href="javascript:void(Tawk_API.toggle())">
+                    <a onClick={() => setIsActive(!isActive)}>
                       Let's Chat
                       <i className="fa-solid fa-arrow-right" />
                     </a>
@@ -192,7 +193,7 @@ const Contact = () => {
                     </p>
                     <h3>For immediate support, feel free to call us on</h3>
 
-                    <button type="submit" className="submit">
+                    <button type="submit" className="submit" onClick={() => setIsActive(!isActive)}>
                       Let's Chat
                       <i className="fa-solid fa-arrow-right my-icon" />
                     </button>

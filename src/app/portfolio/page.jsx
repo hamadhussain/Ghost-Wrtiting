@@ -772,15 +772,14 @@ function Home() {
                 </p>
                 <br />
                 <a
-                  href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                   className="view-pricing-txt various ani-btn"
                 >
                   Get a quote
                   <i className="fa-solid fa-arrow-right" />
                 </a>
                 <a
-                  href="javascript:void(Tawk_API.toggle())"
-                  className="ani-btn"
+onClick={() => setIsActive(!isActive)}                  className="ani-btn"
                 >
                   Let's Chat
                   <i className="fa-solid fa-arrow-right" />
@@ -806,13 +805,13 @@ function Home() {
                 published author.
               </p>
               <a
-                href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                 className="view-pricing-txt various ani-btn"
               >
                 Let's Start
                 <i className="fa-solid fa-arrow-right" />
               </a>
-              <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
+              <a onClick={() => setIsActive(!isActive)}className="ani-btn">
                 Let's Chat
                 <i className="fa-solid fa-arrow-right" />
               </a>
@@ -881,13 +880,13 @@ function Home() {
               <h3>Get Your Book Written At Affordable Rates</h3>
               <p>We are here to take your book to the next level.</p>
               <a
-                href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                 className="view-pricing-txt various ani-btn"
               >
                 Let's Start
                 <i className="fa-solid fa-arrow-right" />
               </a>
-              <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                 Let's Chat
                 <i className="fa-solid fa-arrow-right" />
               </a>
@@ -950,13 +949,13 @@ function Home() {
                 published author.
               </p>
               <a
-                href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                 className="view-pricing-txt various ani-btn"
               >
                 Let's Start
                 <i className="fa-solid fa-arrow-right" />
               </a>
-              <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                 Let's Chat
                 <i className="fa-solid fa-arrow-right" />
               </a>
@@ -1025,13 +1024,13 @@ function Home() {
               <h3>Get Your Book Written At Affordable Rates</h3>
               <p>We are here to take your book to the next level.</p>
               <a
-                href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                 className="view-pricing-txt various ani-btn"
               >
                 Let's Start
                 <i className="fa-solid fa-arrow-right" />
               </a>
-              <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                 Let's Chat
                 <i className="fa-solid fa-arrow-right" />
               </a>
@@ -1094,13 +1093,13 @@ function Home() {
                 published author.
               </p>
               <a
-                href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                 className="view-pricing-txt various ani-btn"
               >
                 Let's Start
                 <i className="fa-solid fa-arrow-right" />
               </a>
-              <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                 Let's Chat
                 <i className="fa-solid fa-arrow-right" />
               </a>
@@ -1169,13 +1168,13 @@ function Home() {
               <h3>Get Your Book Written At Affordable Rates</h3>
               <p>We are here to take your book to the next level.</p>
               <a
-                href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                 className="view-pricing-txt various ani-btn"
               >
                 Let's Start
                 <i className="fa-solid fa-arrow-right" />
               </a>
-              <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                 Let's Chat
                 <i className="fa-solid fa-arrow-right" />
               </a>
@@ -1238,13 +1237,13 @@ function Home() {
                 published author.
               </p>
               <a
-                href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                 className="view-pricing-txt various ani-btn"
               >
                 Let's Start
                 <i className="fa-solid fa-arrow-right" />
               </a>
-              <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                 Let's Chat
                 <i className="fa-solid fa-arrow-right" />
               </a>
@@ -1313,13 +1312,13 @@ function Home() {
               <h3>Get Your Book Written At Affordable Rates</h3>
               <p>We are here to take your book to the next level.</p>
               <a
-                href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                 className="view-pricing-txt various ani-btn"
               >
                 Let's Start
                 <i className="fa-solid fa-arrow-right" />
               </a>
-              <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                 Let's Chat
                 <i className="fa-solid fa-arrow-right" />
               </a>
@@ -1394,13 +1393,13 @@ function Home() {
               <p>Connect with us today and reach where you want to reach.</p>
               <br />
               <a
-                href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                 className="view-pricing-txt various ani-btn"
               >
                 Get Started
                 <i className="fa-solid fa-arrow-right" />
               </a>
-              <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
+              <a onClick={() => setIsActive(!isActive)}  className="ani-btn">
                 Let's Chat
                 <i className="fa-solid fa-arrow-right" />
               </a>

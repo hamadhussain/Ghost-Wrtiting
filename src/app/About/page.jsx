@@ -1,11 +1,11 @@
-'use client'; 
+"use client";
 
-import { useState } from 'react';
-import './../css/font-awesome.min.css';
-import './../css/font-awesome.css';
-import  './../css/m-style.css'
-import  './../css/style-web.css'
-import  './../css/style.css'
+import { useState } from "react";
+import "./../css/font-awesome.min.css";
+import "./../css/font-awesome.css";
+import "./../css/m-style.css";
+import "./../css/style-web.css";
+import "./../css/style.css";
 import { SiGooglemessages } from "react-icons/si";
 import { BsTelephone } from "react-icons/bs";
 const About = () => {
@@ -52,8 +52,7 @@ const About = () => {
         console.log(status);
       } else {
         setStatus(`❌ Error: ${data.error || "Failed to send message"}`);
-                console.log(status);
-
+        console.log(status);
       }
     } catch (error) {
       setStatus(`❌ Error: ${error.message}`);
@@ -96,7 +95,7 @@ const About = () => {
       setStatus(`❌ Error: ${error.message}`);
     }
   };
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const countries = [
     { code: "+92", name: "Pakistan", flag: "pk" },
     { code: "+1", name: "United States", flag: "us" },
@@ -114,882 +113,894 @@ const About = () => {
   };
 
   return (
-<>
- 
-  {/*home main sec start*/}
-  <section className="section-home-main">
-    <section className="section1-home">
-      <img
-        src="assets/images/ghost-text.webp"
-        className="banner-left-text"
-        alt="banner-left-text"
-      />
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <br />
-            <br />
-            <br />
-            <br />
-            <div
-              className="form-container wow fadeInUp   animated"
-              data-wow-duration="1.3s"
-              style={{
-                visibility: "visible",
-                animationDuration: "1.3s",
-                animationName: "fadeInUp"
-              }}
-            >
-              <h4>PROFESSIONAL GHOSTWRITING SERVICES</h4>
-              <h3>
-                HIRE A GHOSTWRITER:
-                <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING NEEDS
-              </h3>
-                <form className="contact-form" onSubmit={handleSubmit}>
-                        <div className="row">
-                          <div className="col-md-6 ">
-                            <input
-                              type="text"
-                              placeholder="Your Name"
-                              minLength={2}
-                              required
-                              value={name}
-                              onChange={(e) => setName(e.target.value)}
-                            />
-                          </div>
-                          <div className="col-md-6 ">
-                            <input
-                              type="email"
-                              placeholder="Your Email"
-                              required
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                            />
-                          </div>
-                          <div className="col-lg-12">
-                            <div className="fldset">
-                              <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
-                                <div className="flag-container">
-                                  {/* Country Code and Flag */}
-                                  <div
-                                    className="selected-flag"
-                                    onClick={toggleDropdown} // Toggle dropdown on click
-                                    tabIndex={0}
-                                    title={`${countryCode}`}
-                                  >
-                                    <div
-                                      className={`iti-flag ${
-                                        countries.find(
-                                          (c) => c.code === countryCode
-                                        )?.flag
-                                      }`}
-                                    />
-                                    <div className="selected-dial-code">
-                                      {countryCode}
-                                    </div>
-                                    <div className="iti-arrow" />
-                                  </div>
-
-                                  {/* Country Dropdown List (visible when dropdown is open) */}
-                                  {isDropdownOpen && (
-                                    <ul className="country-list">
-                                      {countries.map((country) => (
-                                        <li
-                                          key={country.code}
-                                          className="country"
-                                          onClick={() =>
-                                            handleCountrySelect(country.code)
-                                          } // Handle country selection
-                                        >
-                                          <div className="flag-box">
-                                            <div
-                                              className={`iti-flag ${country.flag}`}
-                                            />
-                                          </div>
-                                          <span className="country-name">
-                                            {country.name}
-                                          </span>
-                                          <span className="dial-code">
-                                            {country.code}
-                                          </span>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  )}
-                                </div>
-
-                                {/* Phone Number Input */}
-                                <input
-                                  type="tel"
-                                  placeholder="Contact Number"
-                                  required
-                                  minLength={7}
-                                  maxLength={15}
-                                  value={phoneNumber}
-                                  onChange={(e) =>
-                                    setPhoneNumber(e.target.value)
-                                  }
-                                  style={{ flex: 1 }}
+    <>
+      {/*home main sec start*/}
+      <section className="section-home-main">
+        <section className="section1-home">
+          <img
+            src="assets/images/ghost-text.webp"
+            className="banner-left-text"
+            alt="banner-left-text"
+          />
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <br />
+                <br />
+                <br />
+                <br />
+                <div
+                  className="form-container wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                >
+                  <h4>PROFESSIONAL GHOSTWRITING SERVICES</h4>
+                  <h3>
+                    HIRE A GHOSTWRITER:
+                    <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING
+                    NEEDS
+                  </h3>
+                  <form className="contact-form" onSubmit={handleSubmit}>
+                    <div className="row">
+                      <div className="col-md-6 ">
+                        <input
+                          type="text"
+                          placeholder="Your Name"
+                          minLength={2}
+                          required
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                        />
+                      </div>
+                      <div className="col-md-6 ">
+                        <input
+                          type="email"
+                          placeholder="Your Email"
+                          required
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                      </div>
+                      <div className="col-lg-12">
+                        <div className="fldset">
+                          <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
+                            <div className="flag-container">
+                              {/* Country Code and Flag */}
+                              <div
+                                className="selected-flag"
+                                onClick={toggleDropdown} // Toggle dropdown on click
+                                tabIndex={0}
+                                title={`${countryCode}`}
+                              >
+                                <div
+                                  className={`iti-flag ${
+                                    countries.find(
+                                      (c) => c.code === countryCode
+                                    )?.flag
+                                  }`}
                                 />
+                                <div className="selected-dial-code">
+                                  {countryCode}
+                                </div>
+                                <div className="iti-arrow" />
                               </div>
+
+                              {/* Country Dropdown List (visible when dropdown is open) */}
+                              {isDropdownOpen && (
+                                <ul className="country-list">
+                                  {countries.map((country) => (
+                                    <li
+                                      key={country.code}
+                                      className="country"
+                                      onClick={() =>
+                                        handleCountrySelect(country.code)
+                                      } // Handle country selection
+                                    >
+                                      <div className="flag-box">
+                                        <div
+                                          className={`iti-flag ${country.flag}`}
+                                        />
+                                      </div>
+                                      <span className="country-name">
+                                        {country.name}
+                                      </span>
+                                      <span className="dial-code">
+                                        {country.code}
+                                      </span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-floating">
-                              <label
-                                htmlFor="floatingSelect"
-                                style={{ color: "#000", marginTop: "10px" }}
-                              >
-                                Select Service
-                              </label>
-                              <select
-                                className="form-select"
-                                id="floatingSelect"
-                                required
-                                name="Services"
-                                value={service} // Bind service to state
-                                onChange={(e) => setService(e.target.value)} // Update service on change
-                              >
-                                <option value="ghostwriting">
-                                  ghostwriting
-                                </option>
-                                <option value="book cover">book cover</option>
-                                <option value="illustration">
-                                  illustration
-                                </option>
-                                <option value="publishing">publishing</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-floating">
-                              <label
-                                htmlFor="floatingSelect"
-                                style={{ color: "#000", marginTop: "10px" }}
-                              >
-                                Select Budget
-                              </label>
-                              <select
-                                className="form-select"
-                                id="floatingSelect"
-                                required
-                                name="budget"
-                                value={budget} // Bind budget to state
-                                onChange={(e) => setBudget(e.target.value)} // Update budget on change
-                              >
-                                <option value="£999-£2000">£999-£2000</option>
-                                <option value="£2000-£3000">£2000-£3000</option>
-                                <option value="£3000-£4000">£3000-£4000</option>
-                                <option value="£4000-£5000">£4000-£5000</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-md-12">
-                            <button type="submit" className="submit">
-                              Submit
-                              <i className="fa-solid fa-arrow-right" />
-                            </button>
+
+                            {/* Phone Number Input */}
+                            <input
+                              type="tel"
+                              placeholder="Contact Number"
+                              required
+                              minLength={7}
+                              maxLength={15}
+                              value={phoneNumber}
+                              onChange={(e) => setPhoneNumber(e.target.value)}
+                              style={{ flex: 1 }}
+                            />
                           </div>
                         </div>
-                      </form>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <img
-              src="assets/images/arrow-big-orange.webp"
-              className="bannerright-arrow"
-              alt="bannerright-arrow"
-            />
-            <img
-              src="assets/images/Bookshelf.webp"
-              className="wow fadeInUp   animated"
-              data-wow-duration="1.3s"
-              style={{
-                visibility: "visible",
-                animationDuration: "1.3s",
-                animationName: "fadeInUp"
-              }}
-              alt="banner-book-shelf"
-            />
-            <div
-              className="banner-content wow fadeInRight   animated"
-              data-wow-duration="1.3s"
-              style={{
-                visibility: "visible",
-                animationDuration: "1.3s",
-                animationName: "fadeInUp"
-              }}
-            >
-              <h1>From Writing To Marketing</h1>
-              <h3 className="orange-text">
-                We Can Take <br />
-                Care Of All!
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    {/* section#2 start */}
-    <section className="section2-home">
-      <img
-        src="assets/images/writer-text.webp"
-        className="banner-right-text"
-        alt="banner-left-text"
-      />
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <ul className="banner-logos">
-              <li
-                className="wow fadeInUp animated"
-                data-wow-duration="1.3s"
-                style={{ visibility: "visible", animationDuration: "1.3s" }}
-              >
-                <img src="assets/images/nyt.webp" alt="banner-book-shelf" />
-              </li>
-              <li
-                className="wow fadeInDown animated"
-                data-wow-duration="1.3s"
-                style={{ visibility: "visible", animationDuration: "1.3s" }}
-              >
-                <img
-                  src="assets/images/BarnesNoble.webp"
-                  alt="banner-book-shelf"
-                />
-              </li>
-              <li
-                className="wow fadeInUp animated"
-                data-wow-duration="1.3s"
-                style={{ visibility: "visible", animationDuration: "1.3s" }}
-              >
-                <img src="assets/images/amazon.webp" alt="banner-book-shelf" />
-              </li>
-              <li
-                className="wow fadeInDown animated"
-                data-wow-duration="1.3s"
-                style={{ visibility: "visible", animationDuration: "1.3s" }}
-              >
-                <img
-                  src="assets/images/iBookStore.webp"
-                  alt="banner-book-shelf"
-                />
-              </li>
-              <li
-                className="wow fadeInUp animated"
-                data-wow-duration="1.3s"
-                style={{ visibility: "visible", animationDuration: "1.3s" }}
-              >
-                <img
-                  src="assets/images/gwv-lulu.webp"
-                  alt="banner-book-shelf"
-                />
-              </li>
-              <li
-                className="wow fadeInDown animated"
-                data-wow-duration="1.3s"
-                style={{ visibility: "visible", animationDuration: "1.3s" }}
-              >
-                <img
-                  src="assets/images/gwv-alibris.webp"
-                  alt="banner-book-shelf"
-                />
-              </li>
-            </ul>
-          </div>
-        </div>{" "}
-        <br />
-        <br />
-        <div className="row">
-          <div
-            className="col-md-6 m-auto wow fadeInLeft animated"
-            data-wow-duration="1.3s"
-            style={{
-              visibility: "visible",
-              animationDuration: "1.3s",
-              animationName: "fadeInUp"
-            }}
-          >
-            <h2 className="mb-4">
-              <span>Professional </span> Ghostwriting, Editing, And Publishing{" "}
-              <span> Services</span>
-            </h2>
-            <p>
-              Hire A Ghostwriter is a prominent agency providing professional
-              ghostwriting services in the UK. Our mission is to help
-              individuals and businesses bring their ideas to life by creating
-              high-quality books that meet their unique needs and expectations.
-            </p>
-            <p>
-              The industry that we work in can get a bit pricey, that's why our
-              goal is to provide impressive book writing, editing, and
-              proofreading services that won't break the bank.{" "}
-            </p>
-            <p>
-              We know how crucial it is to make your work shine, so whether you
-              need a little guidance or trustworthy writing services, we've got
-              your back. We'll help you bring your ideas to life and make your
-              masterpiece even more exquisite by eliminating any conceptual
-              errors and giving it the right tone. Our team of incredible
-              writers, editors, and proofreaders is dedicated to providing the
-              best possible consultation and solutions to authors like yourself
-              from all over the world.
-            </p>
-          </div>
-          <div
-            className="col-md-6 wow fadeInRight animated"
-            data-wow-duration="1.3s"
-            style={{
-              visibility: "visible",
-              animationDuration: "1.3s",
-              animationName: "fadeInUp"
-            }}
-          >
-            <img
-              src="assets/images/hire-a-ghost-writers-img.webp"
-              className="mb-2 main-img"
-              alt="banner-book-shelf"
-            />
-            <h3>
-              We Strive For <span>Excellence</span>
-            </h3>
-            <p>
-              We have committed to ourselves that we will only provide a
-              personalized, collaborative, and professional experience for our
-              clients. We value clear communication, integrity, and quality, and
-              we strive to exceed our client's expectations in every project we
-              undertake.
-            </p>
-            <p>
-              Hire A Ghostwriter's mission is to help you reach your goals, and
-              we're serious about delivering high-quality work that sets you
-              apart. With our expert team on your side, you'll have the
-              confidence to be the best author you can be. Let us take your work
-              to the next level with our pro touch - you won't regret it!
-            </p>
-            <br />
-            <a href="javascript:;" className="view-pricing-txt various ani-btn">
-              Get a quote
-              <i className="fa-solid fa-arrow-right" />
-            </a>
-            <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
-              Let's Chat
-              <i className="fa-solid fa-arrow-right" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    {/* section#2 end */}
-  </section>
-  {/*home main sec end*/}
-  {/* section#3 start */}
-  <section className="section3-home">
-    <div className="container">
-      <div className="row">
-        <div
-          className="col-md-7 m-auto wow fadeInLeft   animated"
-          data-wow-duration="1.3s"
-          style={{
-            visibility: "visible",
-            animationDuration: "1.3s",
-            animationName: "fadeInUp"
-          }}
-        >
-          <h3>Cost-effective Book Writing And Publishing Solutions </h3>
-          <p>
-            You don’t need to have a 6-digit bank account to become a published
-            author.
-          </p>
-          <a href="javascript:;" className="view-pricing-txt various ani-btn">
-            Let's Start
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-          <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
-            Let's Chat
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-          <a href="tel:+447418620480" className="call-now-btn">
-            <span>+44</span> 741 862 0480
-          </a>
-        </div>
-        <div
-          className="col-md-5 m-auto wow fadeInUp   animated"
-          data-wow-duration="1.3s"
-          style={{
-            visibility: "visible",
-            animationDuration: "1.3s",
-            animationName: "fadeInUp"
-          }}
-        >
-          <img
-            src="assets/images/3rd-section-book.webp"
-            alt="banner-book-shelf"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-  {/* section#3 end */}
-  {/* section#4 start */}
-  <section className="section4-home">
-    <img
-      src="assets/images/writer-text.webp"
-      className="banner-left-text"
-      alt="banner-left-text"
-    />
-    <div className="container">
-      <div className="row">
-        <div
-          className="col-md-6 m-auto wow fadeInLeft   animated"
-          data-wow-duration="1.3s"
-          style={{
-            visibility: "visible",
-            animationDuration: "1.3s",
-            animationName: "fadeInUp"
-          }}
-        >
-          <h2>
-            Hire A <span>Ghostwriter</span> To <span>Write</span> And
-            <span> Publish</span> Your Book
-          </h2>
-          <p>
-            Are you an aspiring author interested in writing and publishing your
-            book? Then you need to try Hire A Ghostwriter.
-          </p>
-          <div className="row">
-            <div className="col-md-6">
-              <ul>
-                <li>Expert Team</li>
-                <li>Quality Services</li>
-                <li>Cost-Effective Pricing</li>
-                <li>Guaranteed Satisfaction</li>
-                <li>Client Confidentiality</li>
-              </ul>
-            </div>
-            <div className="col-md-6 m-auto">
-              <ul>
-                <li>Complete Solutions</li>
-                <li>Quick Turnaround Times</li>
-                <li>Customizable Services</li>
-                <li>All-In-One Solutions</li>
-                <li>24/7 Support</li>
-              </ul>
-            </div>
-          </div>
-          <a href="javascript:;" className="view-pricing-txt various ani-btn">
-            Get Started
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-          <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
-            Let's Chat
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-          <br />
-          <a href="tel:+447418620480" className="call-now-btn">
-            <span>+44</span> 741 862 0480
-          </a>
-        </div>
-        <div
-          className="col-md-6 wow fadeInRight animated"
-          data-wow-duration="1.3s"
-          style={{
-            visibility: "visible",
-            animationDuration: "1.3s",
-            animationName: "fadeInUp"
-          }}
-        >
-          <div className="sec4-right-img">
-            <img
-              src="assets/images/are-you-looking-img.webp"
-              alt="banner-book-shelf"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    <img
-      src="assets/images/ghost-text.webp"
-      className="banner-right-text"
-      alt="banner-left-text"
-    />
-  </section>
-  {/* section#4 end */}
-  {/* section#5 start */}
-  <section className="section5-home">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-5 m-auto">
-          <img src="assets/images/CTA-book.webp" alt="banner-book-shelf" />
-        </div>
-        <div className="col-md-7 m-auto">
-          <h3>Get Your Book Written At Affordable Rates</h3>
-          <p>We are here to take your book to the next level.</p>
-          <a href="javascript:;" className="view-pricing-txt various ani-btn">
-            Let's Start
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-          <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
-            Let's Chat
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-          <a href="tel:+447418620480" className="call-now-btn">
-            <span>+44</span> 741 862 0480
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>{" "}
-  {/* section#5 end */}
-  {/* section#6 start */}
-  <section className="section6-home">
-    <img
-      src="assets/images/ghost-text.webp"
-      className="banner-left-text"
-      alt="banner-left-text"
-    />
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6 m-auto">
-          <ul>
-            <li
-              style={{
-                borderRight: "1px solid #ff5800",
-                borderBottom: "1px solid #ff5800",
-                marginRight: "-4px"
-              }}
-              className="wow fadeInDown   animated"
-              data-wow-duration="1.3s"
-            >
-              <div className="first">
-                <img
-                  src="assets/images/extensive-research-icon.webp"
-                  alt="icon"
-                />
-                <h3>Extensive Research For Outline</h3>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-floating">
+                          <label
+                            htmlFor="floatingSelect"
+                            style={{ color: "#000", marginTop: "10px" }}
+                          >
+                            Select Service
+                          </label>
+                          <select
+                            className="form-select"
+                            id="floatingSelect"
+                            required
+                            name="Services"
+                            value={service} // Bind service to state
+                            onChange={(e) => setService(e.target.value)} // Update service on change
+                          >
+                            <option value="ghostwriting">ghostwriting</option>
+                            <option value="book cover">book cover</option>
+                            <option value="illustration">illustration</option>
+                            <option value="publishing">publishing</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-floating">
+                          <label
+                            htmlFor="floatingSelect"
+                            style={{ color: "#000", marginTop: "10px" }}
+                          >
+                            Select Budget
+                          </label>
+                          <select
+                            className="form-select"
+                            id="floatingSelect"
+                            required
+                            name="budget"
+                            value={budget} // Bind budget to state
+                            onChange={(e) => setBudget(e.target.value)} // Update budget on change
+                          >
+                            <option value="£999-£2000">£999-£2000</option>
+                            <option value="£2000-£3000">£2000-£3000</option>
+                            <option value="£3000-£4000">£3000-£4000</option>
+                            <option value="£4000-£5000">£4000-£5000</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <button type="submit" className="submit">
+                          Submit
+                          <i className="fa-solid fa-arrow-right" />
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
-              <div className="content">
+              <div className="col-md-6">
                 <img
-                  src="assets/images/quote-icon-left.webp"
-                  className="quote"
-                  alt="icon"
+                  src="assets/images/arrow-big-orange.webp"
+                  className="bannerright-arrow"
+                  alt="bannerright-arrow"
                 />
+                <img
+                  src="assets/images/Bookshelf.webp"
+                  className="wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                  alt="banner-book-shelf"
+                />
+                <div
+                  className="banner-content wow fadeInRight   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                >
+                  <h1>From Writing To Marketing</h1>
+                  <h3 className="orange-text">
+                    We Can Take <br />
+                    Care Of All!
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* section#2 start */}
+        <section className="section2-home">
+          <img
+            src="assets/images/writer-text.webp"
+            className="banner-right-text"
+            alt="banner-left-text"
+          />
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <ul className="banner-logos">
+                  <li
+                    className="wow fadeInUp animated"
+                    data-wow-duration="1.3s"
+                    style={{ visibility: "visible", animationDuration: "1.3s" }}
+                  >
+                    <img src="assets/images/nyt.webp" alt="banner-book-shelf" />
+                  </li>
+                  <li
+                    className="wow fadeInDown animated"
+                    data-wow-duration="1.3s"
+                    style={{ visibility: "visible", animationDuration: "1.3s" }}
+                  >
+                    <img
+                      src="assets/images/BarnesNoble.webp"
+                      alt="banner-book-shelf"
+                    />
+                  </li>
+                  <li
+                    className="wow fadeInUp animated"
+                    data-wow-duration="1.3s"
+                    style={{ visibility: "visible", animationDuration: "1.3s" }}
+                  >
+                    <img
+                      src="assets/images/amazon.webp"
+                      alt="banner-book-shelf"
+                    />
+                  </li>
+                  <li
+                    className="wow fadeInDown animated"
+                    data-wow-duration="1.3s"
+                    style={{ visibility: "visible", animationDuration: "1.3s" }}
+                  >
+                    <img
+                      src="assets/images/iBookStore.webp"
+                      alt="banner-book-shelf"
+                    />
+                  </li>
+                  <li
+                    className="wow fadeInUp animated"
+                    data-wow-duration="1.3s"
+                    style={{ visibility: "visible", animationDuration: "1.3s" }}
+                  >
+                    <img
+                      src="assets/images/gwv-lulu.webp"
+                      alt="banner-book-shelf"
+                    />
+                  </li>
+                  <li
+                    className="wow fadeInDown animated"
+                    data-wow-duration="1.3s"
+                    style={{ visibility: "visible", animationDuration: "1.3s" }}
+                  >
+                    <img
+                      src="assets/images/gwv-alibris.webp"
+                      alt="banner-book-shelf"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>{" "}
+            <br />
+            <br />
+            <div className="row">
+              <div
+                className="col-md-6 m-auto wow fadeInLeft animated"
+                data-wow-duration="1.3s"
+                style={{
+                  visibility: "visible",
+                  animationDuration: "1.3s",
+                  animationName: "fadeInUp",
+                }}
+              >
+                <h2 className="mb-4">
+                  <span>Professional </span> Ghostwriting, Editing, And
+                  Publishing <span> Services</span>
+                </h2>
                 <p>
-                  Our writers leave no stone unturned to ensure that the outline
-                  we create is factual and as per your requirements.
+                  Hire A Ghostwriter is a prominent agency providing
+                  professional ghostwriting services in the UK. Our mission is
+                  to help individuals and businesses bring their ideas to life
+                  by creating high-quality books that meet their unique needs
+                  and expectations.
+                </p>
+                <p>
+                  The industry that we work in can get a bit pricey, that's why
+                  our goal is to provide impressive book writing, editing, and
+                  proofreading services that won't break the bank.{" "}
+                </p>
+                <p>
+                  We know how crucial it is to make your work shine, so whether
+                  you need a little guidance or trustworthy writing services,
+                  we've got your back. We'll help you bring your ideas to life
+                  and make your masterpiece even more exquisite by eliminating
+                  any conceptual errors and giving it the right tone. Our team
+                  of incredible writers, editors, and proofreaders is dedicated
+                  to providing the best possible consultation and solutions to
+                  authors like yourself from all over the world.
                 </p>
               </div>
-            </li>
-            <li
-              style={{
-                borderLeft: "1px solid #ff5800",
-                borderBottom: "1px solid #ff5800"
-              }}
-              className="wow fadeInRight  animated"
-              data-wow-duration="1.3s"
-            >
-              <div className="first">
+              <div
+                className="col-md-6 wow fadeInRight animated"
+                data-wow-duration="1.3s"
+                style={{
+                  visibility: "visible",
+                  animationDuration: "1.3s",
+                  animationName: "fadeInUp",
+                }}
+              >
                 <img
-                  src="assets/images/authentic-ontent-writing-based-on-your-ideas-icon.webp"
-                  alt="icon"
+                  src="assets/images/hire-a-ghost-writers-img.webp"
+                  className="mb-2 main-img"
+                  alt="banner-book-shelf"
                 />
                 <h3>
-                  Your Idea,
-                  <br /> Our Content
+                  We Strive For <span>Excellence</span>
                 </h3>
-              </div>
-              <div className="content">
-                <img
-                  src="assets/images/quote-icon-left.webp"
-                  className="quote"
-                  alt="icon"
-                />
                 <p>
-                  After the approval of the outline, we write content, not by
-                  using some AI tool but with the help of our expert writers.
+                  We have committed to ourselves that we will only provide a
+                  personalized, collaborative, and professional experience for
+                  our clients. We value clear communication, integrity, and
+                  quality, and we strive to exceed our client's expectations in
+                  every project we undertake.
                 </p>
-              </div>
-            </li>
-            <li
-              style={{
-                borderRight: "1px solid #ff5800",
-                borderTop: "1px solid #ff5800",
-                marginRight: "-4px"
-              }}
-              className="wow fadeInLeft   animated"
-              data-wow-duration="1.3s"
-            >
-              <div className="first">
-                <img
-                  src="assets/images/proofreading-and-editing-icon.webp"
-                  alt="icon"
-                />
-                <h3>Ensuring Quality Throughout</h3>
-              </div>
-              <div className="content">
-                <img
-                  src="assets/images/quote-icon-left.webp"
-                  className="quote"
-                  alt="icon"
-                />
                 <p>
-                  Once the draft is finalized, our editors meticulously review
-                  it to ensure that the quality isn't compromised.
+                  Hire A Ghostwriter's mission is to help you reach your goals,
+                  and we're serious about delivering high-quality work that sets
+                  you apart. With our expert team on your side, you'll have the
+                  confidence to be the best author you can be. Let us take your
+                  work to the next level with our pro touch - you won't regret
+                  it!
                 </p>
+                <br />
+                <a
+                  onClick={() => setIsOpen(true)}
+                  className="view-pricing-txt various ani-btn"
+                >
+                  Get a quote
+                  <i className="fa-solid fa-arrow-right" />
+                </a>
+                <a onClick={() => setIsActive(!isActive)} className="ani-btn">
+                  Let's Chat
+                  <i className="fa-solid fa-arrow-right" />
+                </a>
               </div>
-            </li>
-            <li
-              style={{
-                borderLeft: "1px solid #ff5800",
-                borderTop: "1px solid #ff5800"
-              }}
-              className="wow fadeInUp   animated"
+            </div>
+          </div>
+        </section>
+        {/* section#2 end */}
+      </section>
+      {/*home main sec end*/}
+      {/* section#3 start */}
+      <section className="section3-home">
+        <div className="container">
+          <div className="row">
+            <div
+              className="col-md-7 m-auto wow fadeInLeft   animated"
               data-wow-duration="1.3s"
+              style={{
+                visibility: "visible",
+                animationDuration: "1.3s",
+                animationName: "fadeInUp",
+              }}
             >
-              <div className="first">
+              <h3>Cost-effective Book Writing And Publishing Solutions </h3>
+              <p>
+                You don’t need to have a 6-digit bank account to become a
+                published author.
+              </p>
+              <a
+                onClick={() => setIsOpen(true)}
+                className="view-pricing-txt various ani-btn"
+              >
+                Get's Start
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
+                Let's Chat
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+              <a href="tel:+447418620480" className="call-now-btn">
+                <span>+44</span> 741 862 0480
+              </a>
+            </div>
+            <div
+              className="col-md-5 m-auto wow fadeInUp   animated"
+              data-wow-duration="1.3s"
+              style={{
+                visibility: "visible",
+                animationDuration: "1.3s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <img
+                src="assets/images/3rd-section-book.webp"
+                alt="banner-book-shelf"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* section#3 end */}
+      {/* section#4 start */}
+      <section className="section4-home">
+        <img
+          src="assets/images/writer-text.webp"
+          className="banner-left-text"
+          alt="banner-left-text"
+        />
+        <div className="container">
+          <div className="row">
+            <div
+              className="col-md-6 m-auto wow fadeInLeft   animated"
+              data-wow-duration="1.3s"
+              style={{
+                visibility: "visible",
+                animationDuration: "1.3s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <h2>
+                Hire A <span>Ghostwriter</span> To <span>Write</span> And
+                <span> Publish</span> Your Book
+              </h2>
+              <p>
+                Are you an aspiring author interested in writing and publishing
+                your book? Then you need to try Hire A Ghostwriter.
+              </p>
+              <div className="row">
+                <div className="col-md-6">
+                  <ul>
+                    <li>Expert Team</li>
+                    <li>Quality Services</li>
+                    <li>Cost-Effective Pricing</li>
+                    <li>Guaranteed Satisfaction</li>
+                    <li>Client Confidentiality</li>
+                  </ul>
+                </div>
+                <div className="col-md-6 m-auto">
+                  <ul>
+                    <li>Complete Solutions</li>
+                    <li>Quick Turnaround Times</li>
+                    <li>Customizable Services</li>
+                    <li>All-In-One Solutions</li>
+                    <li>24/7 Support</li>
+                  </ul>
+                </div>
+              </div>
+              <a
+                      onClick={() => setIsOpen(true)}
+                className="view-pricing-txt various ani-btn"
+              >
+                Get Started
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
+                Let's Chat
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+              <br />
+              <a href="tel:+447418620480" className="call-now-btn">
+                <span>+44</span> 741 862 0480
+              </a>
+            </div>
+            <div
+              className="col-md-6 wow fadeInRight animated"
+              data-wow-duration="1.3s"
+              style={{
+                visibility: "visible",
+                animationDuration: "1.3s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <div className="sec4-right-img">
                 <img
-                  src="assets/images/formatting-designing-icon.webp"
-                  alt="icon"
+                  src="assets/images/are-you-looking-img.webp"
+                  alt="banner-book-shelf"
                 />
-                <h3>Finishing Touches Before Launch</h3>
               </div>
-              <div className="content">
-                <img
-                  src="assets/images/quote-icon-left.webp"
-                  className="quote"
-                  alt="icon"
-                />
-                <p>
-                  After editing, we take care of the designing, formatting and
-                  typesetting. Once that's done, we publish your book.
-                </p>
-              </div>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-        <div
-          className="col-md-6 m-auto wow fadeInRight   animated"
-          data-wow-duration="1.3s"
-          style={{
-            visibility: "visible",
-            animationDuration: "1.3s",
-            animationName: "fadeInUp"
-          }}
-        >
-          <h2>
-            Why Choose
-            <br />
-            <span>Hire a Ghost Writer</span>
-          </h2>
-          <p>
-            We don’t like to toot our own horn but we have the expertise
-            required to bring your dream book come to life. Our team of
-            experienced and highly skilled ghostwriters can work with clients to
-            create compelling narratives, engaging prose, and cohesive
-            storylines. We understand the importance of capturing the client's
-            voice and style, and we pride ourselves on our ability to bring
-            their ideas to life on the page.{" "}
-          </p>
+        <img
+          src="assets/images/ghost-text.webp"
+          className="banner-right-text"
+          alt="banner-left-text"
+        />
+      </section>
+      {/* section#4 end */}
+      {/* section#5 start */}
+      <section className="section5-home">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-5 m-auto">
+              <img src="assets/images/CTA-book.webp" alt="banner-book-shelf" />
+            </div>
+            <div className="col-md-7 m-auto">
+              <h3>Get Your Book Written At Affordable Rates</h3>
+              <p>We are here to take your book to the next level.</p>
+              <a
+                onClick={() => setIsOpen(true)}
+                className="view-pricing-txt various ani-btn"
+              >
+                Get's Start
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
+                Let's Chat
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+              <a href="tel:+447418620480" className="call-now-btn">
+                <span>+44</span> 741 862 0480
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  {/* section#6 end */}
-  {/* section#7 start */}
-  <section className="section7-home">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12 text-center">
-          <h2>
-            Whether You're A First-Timer Or An Experienced Writer,{" "}
-            <span>We Can Help!</span>
-          </h2>
-          <p>
-            Regardless of your experience in the book writing and publishing
-            industry, you can rely on Hire A Ghostwriter to add value to your
-            projects.{" "}
-          </p>
-          <ul>
-            <li
-              className="wow fadeInUp   animated"
+      </section>{" "}
+      {/* section#5 end */}
+      {/* section#6 start */}
+      <section className="section6-home">
+        <img
+          src="assets/images/ghost-text.webp"
+          className="banner-left-text"
+          alt="banner-left-text"
+        />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 m-auto">
+              <ul>
+                <li
+                  style={{
+                    borderRight: "1px solid #ff5800",
+                    borderBottom: "1px solid #ff5800",
+                    marginRight: "-4px",
+                  }}
+                  className="wow fadeInDown   animated"
+                  data-wow-duration="1.3s"
+                >
+                  <div className="first">
+                    <img
+                      src="assets/images/extensive-research-icon.webp"
+                      alt="icon"
+                    />
+                    <h3>Extensive Research For Outline</h3>
+                  </div>
+                  <div className="content">
+                    <img
+                      src="assets/images/quote-icon-left.webp"
+                      className="quote"
+                      alt="icon"
+                    />
+                    <p>
+                      Our writers leave no stone unturned to ensure that the
+                      outline we create is factual and as per your requirements.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  style={{
+                    borderLeft: "1px solid #ff5800",
+                    borderBottom: "1px solid #ff5800",
+                  }}
+                  className="wow fadeInRight  animated"
+                  data-wow-duration="1.3s"
+                >
+                  <div className="first">
+                    <img
+                      src="assets/images/authentic-ontent-writing-based-on-your-ideas-icon.webp"
+                      alt="icon"
+                    />
+                    <h3>
+                      Your Idea,
+                      <br /> Our Content
+                    </h3>
+                  </div>
+                  <div className="content">
+                    <img
+                      src="assets/images/quote-icon-left.webp"
+                      className="quote"
+                      alt="icon"
+                    />
+                    <p>
+                      After the approval of the outline, we write content, not
+                      by using some AI tool but with the help of our expert
+                      writers.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  style={{
+                    borderRight: "1px solid #ff5800",
+                    borderTop: "1px solid #ff5800",
+                    marginRight: "-4px",
+                  }}
+                  className="wow fadeInLeft   animated"
+                  data-wow-duration="1.3s"
+                >
+                  <div className="first">
+                    <img
+                      src="assets/images/proofreading-and-editing-icon.webp"
+                      alt="icon"
+                    />
+                    <h3>Ensuring Quality Throughout</h3>
+                  </div>
+                  <div className="content">
+                    <img
+                      src="assets/images/quote-icon-left.webp"
+                      className="quote"
+                      alt="icon"
+                    />
+                    <p>
+                      Once the draft is finalized, our editors meticulously
+                      review it to ensure that the quality isn't compromised.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  style={{
+                    borderLeft: "1px solid #ff5800",
+                    borderTop: "1px solid #ff5800",
+                  }}
+                  className="wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                >
+                  <div className="first">
+                    <img
+                      src="assets/images/formatting-designing-icon.webp"
+                      alt="icon"
+                    />
+                    <h3>Finishing Touches Before Launch</h3>
+                  </div>
+                  <div className="content">
+                    <img
+                      src="assets/images/quote-icon-left.webp"
+                      className="quote"
+                      alt="icon"
+                    />
+                    <p>
+                      After editing, we take care of the designing, formatting
+                      and typesetting. Once that's done, we publish your book.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="col-md-6 m-auto wow fadeInRight   animated"
               data-wow-duration="1.3s"
               style={{
                 visibility: "visible",
                 animationDuration: "1.3s",
-                animationName: "fadeInUp"
+                animationName: "fadeInUp",
               }}
             >
-              <img
-                src="assets/images/bookcover-1.webp"
-                className="close-book"
-                alt="banner-book-shelf"
-              />
-              <img
-                src="assets/images/bookcover-1-hover.webp"
-                className="open-book"
-                alt="banner-book-shelf"
-              />
-            </li>
-            <li
-              className="wow fadeInUp   animated"
-              data-wow-duration="1.3s"
-              style={{
-                visibility: "visible",
-                animationDuration: "1.3s",
-                animationName: "fadeInUp"
-              }}
-            >
-              <img
-                src="assets/images/bookcover-2.webp"
-                className="close-book"
-                alt="banner-book-shelf"
-              />
-              <img
-                src="assets/images/bookcover-2-hover.webp"
-                className="open-book"
-                alt="banner-book-shelf"
-              />{" "}
-            </li>
-            <li
-              className="wow fadeInUp   animated"
-              data-wow-duration="1.3s"
-              style={{
-                visibility: "visible",
-                animationDuration: "1.3s",
-                animationName: "fadeInUp"
-              }}
-            >
-              <img
-                src="assets/images/bookcover-3.webp"
-                className="close-book"
-                alt="banner-book-shelf"
-              />
-              <img
-                src="assets/images/bookcover-3-hover.webp"
-                className="open-book"
-                alt="banner-book-shelf"
-              />
-            </li>
-            <li
-              className="wow fadeInUp   animated"
-              data-wow-duration="1.3s"
-              style={{
-                visibility: "visible",
-                animationDuration: "1.3s",
-                animationName: "fadeInUp"
-              }}
-            >
-              <img
-                src="assets/images/Book-Cover-4.webp"
-                className="close-book"
-                alt="banner-book-shelf"
-              />
-              <img
-                src="assets/images/Book-Cover-4-hover.webp"
-                className="open-book"
-                alt="banner-book-shelf"
-              />{" "}
-            </li>
-            <li
-              className="wow fadeInUp   animated"
-              data-wow-duration="1.3s"
-              style={{
-                visibility: "visible",
-                animationDuration: "1.3s",
-                animationName: "fadeInUp"
-              }}
-            >
-              <img
-                src="assets/images/Book-Cover-5.webp"
-                className="close-book"
-                alt="banner-book-shelf"
-              />
-              <img
-                src="assets/images/Book-Cover-5-hover.webp"
-                className="open-book"
-                alt="banner-book-shelf"
-              />
-            </li>
-            <li
-              className="wow fadeInUp   animated"
-              data-wow-duration="1.3s"
-              style={{
-                visibility: "visible",
-                animationDuration: "1.3s",
-                animationName: "fadeInUp"
-              }}
-            >
-              <img
-                src="assets/images/Book-Cover-6.webp"
-                className="close-book"
-                alt="banner-book-shelf"
-              />
-              <img
-                src="assets/images/Book-Cover-6-hover.webp"
-                className="open-book"
-                alt="banner-book-shelf"
-              />
-            </li>
-            <li
-              className="wow fadeInUp   animated"
-              data-wow-duration="1.3s"
-              style={{
-                visibility: "visible",
-                animationDuration: "1.3s",
-                animationName: "fadeInUp"
-              }}
-            >
-              <img
-                src="assets/images/Book-Cover-7.webp"
-                className="close-book"
-                alt="banner-book-shelf"
-              />
-              <img
-                src="assets/images/Book-Cover-7-hover.webp"
-                className="open-book"
-                alt="banner-book-shelf"
-              />
-            </li>
-            <li
-              className="wow fadeInUp   animated"
-              data-wow-duration="1.3s"
-              style={{
-                visibility: "visible",
-                animationDuration: "1.3s",
-                animationName: "fadeInUp"
-              }}
-            >
-              <img
-                src="assets/images/Book-Cover-8.webp"
-                className="close-book"
-                alt="banner-book-shelf"
-              />
-              <img
-                src="assets/images/Book-Cover-8-hover.webp"
-                className="open-book"
-                alt="banner-book-shelf"
-              />
-            </li>
-          </ul>
-          <a
-            href="https://hireaghostwriter.co.uk/book-cover-samples"
-            className="ani-btn"
-          >
-            Explore More
-            <i className="fa-solid fa-arrow-right" />
-          </a>
+              <h2>
+                Why Choose
+                <br />
+                <span>Hire a Ghost Writer</span>
+              </h2>
+              <p>
+                We don’t like to toot our own horn but we have the expertise
+                required to bring your dream book come to life. Our team of
+                experienced and highly skilled ghostwriters can work with
+                clients to create compelling narratives, engaging prose, and
+                cohesive storylines. We understand the importance of capturing
+                the client's voice and style, and we pride ourselves on our
+                ability to bring their ideas to life on the page.{" "}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <img
-      src="assets/images/writer-text.webp"
-      className="banner-right-text"
-      alt="banner-left-text"
-    />
-  </section>
-  {/* section#7 end */}
-  {/* section#8 start */}
-  {/* <section class="section-home-mobile">
+      </section>
+      {/* section#6 end */}
+      {/* section#7 start */}
+      <section className="section7-home">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <h2>
+                Whether You're A First-Timer Or An Experienced Writer,{" "}
+                <span>We Can Help!</span>
+              </h2>
+              <p>
+                Regardless of your experience in the book writing and publishing
+                industry, you can rely on Hire A Ghostwriter to add value to
+                your projects.{" "}
+              </p>
+              <ul>
+                <li
+                  className="wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                >
+                  <img
+                    src="assets/images/bookcover-1.webp"
+                    className="close-book"
+                    alt="banner-book-shelf"
+                  />
+                  <img
+                    src="assets/images/bookcover-1-hover.webp"
+                    className="open-book"
+                    alt="banner-book-shelf"
+                  />
+                </li>
+                <li
+                  className="wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                >
+                  <img
+                    src="assets/images/bookcover-2.webp"
+                    className="close-book"
+                    alt="banner-book-shelf"
+                  />
+                  <img
+                    src="assets/images/bookcover-2-hover.webp"
+                    className="open-book"
+                    alt="banner-book-shelf"
+                  />{" "}
+                </li>
+                <li
+                  className="wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                >
+                  <img
+                    src="assets/images/bookcover-3.webp"
+                    className="close-book"
+                    alt="banner-book-shelf"
+                  />
+                  <img
+                    src="assets/images/bookcover-3-hover.webp"
+                    className="open-book"
+                    alt="banner-book-shelf"
+                  />
+                </li>
+                <li
+                  className="wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                >
+                  <img
+                    src="assets/images/Book-Cover-4.webp"
+                    className="close-book"
+                    alt="banner-book-shelf"
+                  />
+                  <img
+                    src="assets/images/Book-Cover-4-hover.webp"
+                    className="open-book"
+                    alt="banner-book-shelf"
+                  />{" "}
+                </li>
+                <li
+                  className="wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                >
+                  <img
+                    src="assets/images/Book-Cover-5.webp"
+                    className="close-book"
+                    alt="banner-book-shelf"
+                  />
+                  <img
+                    src="assets/images/Book-Cover-5-hover.webp"
+                    className="open-book"
+                    alt="banner-book-shelf"
+                  />
+                </li>
+                <li
+                  className="wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                >
+                  <img
+                    src="assets/images/Book-Cover-6.webp"
+                    className="close-book"
+                    alt="banner-book-shelf"
+                  />
+                  <img
+                    src="assets/images/Book-Cover-6-hover.webp"
+                    className="open-book"
+                    alt="banner-book-shelf"
+                  />
+                </li>
+                <li
+                  className="wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                >
+                  <img
+                    src="assets/images/Book-Cover-7.webp"
+                    className="close-book"
+                    alt="banner-book-shelf"
+                  />
+                  <img
+                    src="assets/images/Book-Cover-7-hover.webp"
+                    className="open-book"
+                    alt="banner-book-shelf"
+                  />
+                </li>
+                <li
+                  className="wow fadeInUp   animated"
+                  data-wow-duration="1.3s"
+                  style={{
+                    visibility: "visible",
+                    animationDuration: "1.3s",
+                    animationName: "fadeInUp",
+                  }}
+                >
+                  <img
+                    src="assets/images/Book-Cover-8.webp"
+                    className="close-book"
+                    alt="banner-book-shelf"
+                  />
+                  <img
+                    src="assets/images/Book-Cover-8-hover.webp"
+                    className="open-book"
+                    alt="banner-book-shelf"
+                  />
+                </li>
+              </ul>
+              <a
+                href="https://hireaghostwriter.co.uk/book-cover-samples"
+                className="ani-btn"
+              >
+                Explore More
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <img
+          src="assets/images/writer-text.webp"
+          className="banner-right-text"
+          alt="banner-left-text"
+        />
+      </section>
+      {/* section#7 end */}
+      {/* section#8 start */}
+      {/* <section class="section-home-mobile">
 		<img src="assets/images/writer-text.webp" class="banner-left-text" alt="banner-left-text">
 			<div class="container">
 				<div class="row mb-4">
@@ -1062,72 +1073,73 @@ const About = () => {
 			</div>
 			<img src="assets/images/ghost-text.webp" class="banner-right-text" alt="banner-left-text">
 		</section> */}
-  <section className="section-home-mobile">
-    <img
-      src="assets/images/writer-text.webp"
-      className="banner-left-text"
-      alt="banner-left-text"
-    />
-    <div className="container">
-      <div className="row mb-4">
-        <div className="col-md-12 text-center">
-          <h2>
-            All<span> Genres</span> Covered
-          </h2>
-          <p>
-            From fiction to non-fiction and everything in between, Hire A
-            Ghostwriter can work for all genres.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div className="container">
-      <div className="container-2">
-        <div id="accordion">
-          <div className="card">
-            <div className="collapse-h1">
-              <div className="card-header tab-accordian" id="headingOne">
-                <h5 className="mb-0">
-                  <button
-                    className="btn btn-genre"
-                    data-toggle="collapse"
-                    data-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    Fiction
-                  </button>
-                </h5>
-              </div>
+      <section className="section-home-mobile">
+        <img
+          src="assets/images/writer-text.webp"
+          className="banner-left-text"
+          alt="banner-left-text"
+        />
+        <div className="container">
+          <div className="row mb-4">
+            <div className="col-md-12 text-center">
+              <h2>
+                All<span> Genres</span> Covered
+              </h2>
+              <p>
+                From fiction to non-fiction and everything in between, Hire A
+                Ghostwriter can work for all genres.
+              </p>
             </div>
-            <div
-              id="collapseOne"
-              className="collapse show"
-              aria-labelledby="headingOne"
-              data-parent="#accordion"
-            >
-              <div className="card-body tab-accordian">
-                <div className="panel active fiction">
-                  <h3>Fiction</h3>
-                  <div className="content">
-                    <p>
-                      Our comprehensive fiction ghostwriting service includes
-                      everything you need to write a successful novel, from
-                      initial concept development to final editing and
-                      publishing. We'll work with you to develop a detailed plot
-                      and character outline and conduct extensive research to
-                      ensure that your story is well-crafted and believable.
-                    </p>
-                    <a href="https://hireaghostwriter.co.uk/fiction-ghostwriting">
-                      Explore More
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
+          </div>
+        </div>
+        <div className="container">
+          <div className="container-2">
+            <div id="accordion">
+              <div className="card">
+                <div className="collapse-h1">
+                  <div className="card-header tab-accordian" id="headingOne">
+                    <h5 className="mb-0">
+                      <button
+                        className="btn btn-genre"
+                        data-toggle="collapse"
+                        data-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Fiction
+                      </button>
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  id="collapseOne"
+                  className="collapse show"
+                  aria-labelledby="headingOne"
+                  data-parent="#accordion"
+                >
+                  <div className="card-body tab-accordian">
+                    <div className="panel active fiction">
+                      <h3>Fiction</h3>
+                      <div className="content">
+                        <p>
+                          Our comprehensive fiction ghostwriting service
+                          includes everything you need to write a successful
+                          novel, from initial concept development to final
+                          editing and publishing. We'll work with you to develop
+                          a detailed plot and character outline and conduct
+                          extensive research to ensure that your story is
+                          well-crafted and believable.
+                        </p>
+                        <a href="https://hireaghostwriter.co.uk/fiction-ghostwriting">
+                          Explore More
+                          <i className="fa-solid fa-arrow-right" />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          {/* <div class="card">
+              {/* <div class="card">
 					<div class="collapse-h2">
 						<div class="card-header tab-accordian" id="headingTwo">
 							<h5 class="mb-0">
@@ -1149,93 +1161,94 @@ const About = () => {
 						</div>
 					</div>
 				</div> */}
-          <div className="card">
-            <div className="collapse-h3">
-              <div className="card-header tab-accordian" id="headingThree">
-                <h5 className="mb-0">
-                  <button
-                    className="btn btn-link collapsed btn-genre"
-                    data-toggle="collapse"
-                    data-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Non Fiction.
-                  </button>
-                </h5>
-              </div>
-            </div>
-            <div
-              id="collapseThree"
-              className="collapse"
-              aria-labelledby="headingThree"
-              data-parent="#accordion"
-            >
-              <div className="card-body">
-                <div className="panel non-fiction">
-                  <h3>Non Fiction</h3>
-                  <div className="content">
-                    <p>
-                      As a leading ghostwriting company, we have a team of
-                      experienced non-fiction book writers who can turn your
-                      concept into a captivating book. Our non-fiction writing
-                      service is tailored to your needs and goals and we work
-                      closely with you to understand your vision, your audience,
-                      and your writing style.
-                    </p>
-                    <a href="https://hireaghostwriter.co.uk/nonfiction-ghostwriting">
-                      Explore More
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
+              <div className="card">
+                <div className="collapse-h3">
+                  <div className="card-header tab-accordian" id="headingThree">
+                    <h5 className="mb-0">
+                      <button
+                        className="btn btn-link collapsed btn-genre"
+                        data-toggle="collapse"
+                        data-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Non Fiction.
+                      </button>
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  id="collapseThree"
+                  className="collapse"
+                  aria-labelledby="headingThree"
+                  data-parent="#accordion"
+                >
+                  <div className="card-body">
+                    <div className="panel non-fiction">
+                      <h3>Non Fiction</h3>
+                      <div className="content">
+                        <p>
+                          As a leading ghostwriting company, we have a team of
+                          experienced non-fiction book writers who can turn your
+                          concept into a captivating book. Our non-fiction
+                          writing service is tailored to your needs and goals
+                          and we work closely with you to understand your
+                          vision, your audience, and your writing style.
+                        </p>
+                        <a href="https://hireaghostwriter.co.uk/nonfiction-ghostwriting">
+                          Explore More
+                          <i className="fa-solid fa-arrow-right" />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="collapse-h4">
-              <div className="card-header tab-accordian" id="headingThree">
-                <h5 className="mb-0">
-                  <button
-                    className="btn btn-link collapsed btn-genre"
-                    data-toggle="collapse"
-                    data-target="#collapseFour"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Biography
-                  </button>
-                </h5>
-              </div>
-            </div>
-            <div
-              id="collapseFour"
-              className="collapse"
-              aria-labelledby="headingThree"
-              data-parent="#accordion"
-            >
-              <div className="card-body">
-                <div className="panel biography">
-                  <h3>Biography</h3>
-                  <div className="content">
-                    <p>
-                      Hire A Ghostwriter is a professional ghostwriting company
-                      that offers exceptional memoir ghostwriting services to
-                      help you bring your story to life. Our team of
-                      professional memoir ghostwriters has the experience and
-                      expertise to create a memoir that is authentic, engaging,
-                      and reflective of your unique voice.
-                    </p>
-                    <a href="https://hireaghostwriter.co.uk/memoir-autobiography-ghostwriting">
-                      Explore More
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
+              <div className="card">
+                <div className="collapse-h4">
+                  <div className="card-header tab-accordian" id="headingThree">
+                    <h5 className="mb-0">
+                      <button
+                        className="btn btn-link collapsed btn-genre"
+                        data-toggle="collapse"
+                        data-target="#collapseFour"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Biography
+                      </button>
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  id="collapseFour"
+                  className="collapse"
+                  aria-labelledby="headingThree"
+                  data-parent="#accordion"
+                >
+                  <div className="card-body">
+                    <div className="panel biography">
+                      <h3>Biography</h3>
+                      <div className="content">
+                        <p>
+                          Hire A Ghostwriter is a professional ghostwriting
+                          company that offers exceptional memoir ghostwriting
+                          services to help you bring your story to life. Our
+                          team of professional memoir ghostwriters has the
+                          experience and expertise to create a memoir that is
+                          authentic, engaging, and reflective of your unique
+                          voice.
+                        </p>
+                        <a href="https://hireaghostwriter.co.uk/memoir-autobiography-ghostwriting">
+                          Explore More
+                          <i className="fa-solid fa-arrow-right" />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          {/* <div class="card">
+              {/* <div class="card">
 					<div class="collapse-h5">
 						<div class="card-header tab-accordian" id="headingThree">
 						<h5 class="mb-0">
@@ -1257,159 +1270,163 @@ const About = () => {
 						</div>
 					</div>
 				</div> */}
-          <div className="card">
-            <div className="collapse-h6">
-              <div className="card-header tab-accordian" id="headingThree">
-                <h5 className="mb-0">
-                  <button
-                    className="btn btn-link collapsed btn-genre"
-                    data-toggle="collapse"
-                    data-target="#collapseSix"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Business Book.
-                  </button>
-                </h5>
+              <div className="card">
+                <div className="collapse-h6">
+                  <div className="card-header tab-accordian" id="headingThree">
+                    <h5 className="mb-0">
+                      <button
+                        className="btn btn-link collapsed btn-genre"
+                        data-toggle="collapse"
+                        data-target="#collapseSix"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Business Book.
+                      </button>
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  id="collapseSix"
+                  className="collapse"
+                  aria-labelledby="headingThree"
+                  data-parent="#accordion"
+                >
+                  <div className="card-body">
+                    <div className="panel Business">
+                      <h3>Business Book</h3>
+                      <div className="content">
+                        <p>
+                          If you're an entrepreneur, executive, or business
+                          professional looking to write a book but don't have
+                          the time or expertise, Hire A Ghostwriter can help. We
+                          specialize in business book ghostwriting, offering
+                          top-notch business writing services to help you craft
+                          a book that captures your unique perspective and
+                          insights. Our business writers have years of
+                          experience writing for various industries and can help
+                          you tailor your book to your target audience.
+                        </p>
+                        <a href="https://hireaghostwriter.co.uk/business-book-ghostwriting-services">
+                          Explore More
+                          <i className="fa-solid fa-arrow-right" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div
-              id="collapseSix"
-              className="collapse"
-              aria-labelledby="headingThree"
-              data-parent="#accordion"
-            >
-              <div className="card-body">
-                <div className="panel Business">
-                  <h3>Business Book</h3>
-                  <div className="content">
-                    <p>
-                      If you're an entrepreneur, executive, or business
-                      professional looking to write a book but don't have the
-                      time or expertise, Hire A Ghostwriter can help. We
-                      specialize in business book ghostwriting, offering
-                      top-notch business writing services to help you craft a
-                      book that captures your unique perspective and insights.
-                      Our business writers have years of experience writing for
-                      various industries and can help you tailor your book to
-                      your target audience.
-                    </p>
-                    <a href="https://hireaghostwriter.co.uk/business-book-ghostwriting-services">
-                      Explore More
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
+              <div className="card">
+                <div className="collapse-h7">
+                  <div className="card-header tab-accordian" id="headingThree">
+                    <h5 className="mb-0">
+                      <button
+                        className="btn btn-link collapsed btn-genre"
+                        data-toggle="collapse"
+                        data-target="#collapseSeven"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Children Book.
+                      </button>
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  id="collapseSeven"
+                  className="collapse"
+                  aria-labelledby="headingThree"
+                  data-parent="#accordion"
+                >
+                  <div className="card-body">
+                    <div className="panel Children">
+                      <h3>Children Book</h3>
+                      <div className="content">
+                        <p>
+                          As the saying goes, children are the future, and their
+                          imaginations are limitless. Let us help you tap into
+                          that magic and create a timeless children's book that
+                          will captivate young readers for generations to come.
+                          Our team of children's book ghostwriters are not only
+                          expert wordsmiths but also skilled storytellers.{" "}
+                        </p>
+                        <a href="https://hireaghostwriter.co.uk/children-book">
+                          Explore More
+                          <i className="fa-solid fa-arrow-right" />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="card">
-            <div className="collapse-h7">
-              <div className="card-header tab-accordian" id="headingThree">
-                <h5 className="mb-0">
-                  <button
-                    className="btn btn-link collapsed btn-genre"
-                    data-toggle="collapse"
-                    data-target="#collapseSeven"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Children Book.
-                  </button>
-                </h5>
-              </div>
-            </div>
-            <div
-              id="collapseSeven"
-              className="collapse"
-              aria-labelledby="headingThree"
-              data-parent="#accordion"
-            >
-              <div className="card-body">
-                <div className="panel Children">
-                  <h3>Children Book</h3>
-                  <div className="content">
-                    <p>
-                      As the saying goes, children are the future, and their
-                      imaginations are limitless. Let us help you tap into that
-                      magic and create a timeless children's book that will
-                      captivate young readers for generations to come. Our team
-                      of children's book ghostwriters are not only expert
-                      wordsmiths but also skilled storytellers.{" "}
-                    </p>
-                    <a href="https://hireaghostwriter.co.uk/children-book">
-                      Explore More
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
-                  </div>
-                </div>
-              </div>
+        </div>
+        <div className="container">
+          <div className="row mt-4 mb-4">
+            <div className="col-md-12 text-center">
+              <a
+                      onClick={() => setIsOpen(true)}
+                className="view-pricing-txt various ani-btn"
+              >
+                Get Started
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
+                Let's Chat
+                <i className="fa-solid fa-arrow-right" />
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div className="container">
-      <div className="row mt-4 mb-4">
-        <div className="col-md-12 text-center">
-          <a href="javascript:;" className="view-pricing-txt various ani-btn">
-            Get Started
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-          <a className="chat_btn" href="javascript:void(Tawk_API.toggle())">
-            Let's Chat
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-        </div>
-      </div>
-    </div>
-    <img
-      src="assets/images/ghost-text.webp"
-      className="banner-right-text"
-      alt="banner-left-text"
-    />
-  </section>
-  <section className="section8-home">
-    <img
-      src="assets/images/writer-text.webp"
-      className="banner-left-text"
-      alt="banner-left-text"
-    />
-    <div className="container">
-      <div className="row mb-4">
-        <div className="col-md-12 text-center">
-          <h2>
-            Types Of <span>Genre</span>
-          </h2>
-          <p>
-            At Book Writing Lane, we have a multi-talented crew skilled at
-            writing books on different genres, providing you with top-quality
-            content to ensure that we gain your trust for a lifetime.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div className="container">
-      <div className="container-2">
-        <div className="panel active fiction">
-          <h3>Fiction</h3>
-          <div className="content">
-            <h4>Fiction.</h4>
-            <p>
-              Our comprehensive fiction ghostwriting service includes everything
-              you need to write a successful novel, from initial concept
-              development to final editing and publishing. We'll work with you
-              to develop a detailed plot and character outline and conduct
-              extensive research to ensure that your story is well-crafted and
-              believable.
-            </p>
-            <a href="https://hireaghostwriter.co.uk/fiction-ghostwriting">
-              Explore More
-              <i className="fa-solid fa-arrow-right" />
-            </a>
+        <img
+          src="assets/images/ghost-text.webp"
+          className="banner-right-text"
+          alt="banner-left-text"
+        />
+      </section>
+      <section className="section8-home">
+        <img
+          src="assets/images/writer-text.webp"
+          className="banner-left-text"
+          alt="banner-left-text"
+        />
+        <div className="container">
+          <div className="row mb-4">
+            <div className="col-md-12 text-center">
+              <h2>
+                Types Of <span>Genre</span>
+              </h2>
+              <p>
+                At Book Writing Lane, we have a multi-talented crew skilled at
+                writing books on different genres, providing you with
+                top-quality content to ensure that we gain your trust for a
+                lifetime.
+              </p>
+            </div>
           </div>
         </div>
-        {/* <div class="panel Children">
+        <div className="container">
+          <div className="container-2">
+            <div className="panel active fiction">
+              <h3>Fiction</h3>
+              <div className="content">
+                <h4>Fiction.</h4>
+                <p>
+                  Our comprehensive fiction ghostwriting service includes
+                  everything you need to write a successful novel, from initial
+                  concept development to final editing and publishing. We'll
+                  work with you to develop a detailed plot and character outline
+                  and conduct extensive research to ensure that your story is
+                  well-crafted and believable.
+                </p>
+                <a href="https://hireaghostwriter.co.uk/fiction-ghostwriting">
+                  Explore More
+                  <i className="fa-solid fa-arrow-right" />
+                </a>
+              </div>
+            </div>
+            {/* <div class="panel Children">
 						<h3>Book Cover.</h3>
 						<div class="content">
 							<h4>Book Cover Design</h4>
@@ -1417,41 +1434,43 @@ const About = () => {
 							<a href="https://hireaghostwriter.co.uk/book-cover-design">Explore More<i class="fa-solid fa-arrow-right"></i></a>
 						</div>
 					</div> */}
-        <div className="panel non-fiction">
-          <h3>Non Fiction</h3>
-          <div className="content">
-            <h4>Non Fiction.</h4>
-            <p>
-              As a leading ghostwriting company, we have a team of experienced
-              non-fiction book writers who can turn your concept into a
-              captivating book. Our non-fiction writing service is tailored to
-              your needs and goals and we work closely with you to understand
-              your vision, your audience, and your writing style.
-            </p>
-            <a href="https://hireaghostwriter.co.uk/nonfiction-ghostwriting">
-              Explore More
-              <i className="fa-solid fa-arrow-right" />
-            </a>
-          </div>
-        </div>
-        <div className="panel biography">
-          <h3>Biography</h3>
-          <div className="content">
-            <h4>Biography</h4>
-            <p>
-              Hire A Ghostwriter is a professional ghostwriting company that
-              offers exceptional memoir ghostwriting services to help you bring
-              your story to life. Our team of professional memoir ghostwriters
-              has the experience and expertise to create a memoir that is
-              authentic, engaging, and reflective of your unique voice.
-            </p>
-            <a href="https://hireaghostwriter.co.uk/memoir-autobiography-ghostwriting">
-              Explore More
-              <i className="fa-solid fa-arrow-right" />
-            </a>
-          </div>
-        </div>
-        {/* <div class="panel Informative">
+            <div className="panel non-fiction">
+              <h3>Non Fiction</h3>
+              <div className="content">
+                <h4>Non Fiction.</h4>
+                <p>
+                  As a leading ghostwriting company, we have a team of
+                  experienced non-fiction book writers who can turn your concept
+                  into a captivating book. Our non-fiction writing service is
+                  tailored to your needs and goals and we work closely with you
+                  to understand your vision, your audience, and your writing
+                  style.
+                </p>
+                <a href="https://hireaghostwriter.co.uk/nonfiction-ghostwriting">
+                  Explore More
+                  <i className="fa-solid fa-arrow-right" />
+                </a>
+              </div>
+            </div>
+            <div className="panel biography">
+              <h3>Biography</h3>
+              <div className="content">
+                <h4>Biography</h4>
+                <p>
+                  Hire A Ghostwriter is a professional ghostwriting company that
+                  offers exceptional memoir ghostwriting services to help you
+                  bring your story to life. Our team of professional memoir
+                  ghostwriters has the experience and expertise to create a
+                  memoir that is authentic, engaging, and reflective of your
+                  unique voice.
+                </p>
+                <a href="https://hireaghostwriter.co.uk/memoir-autobiography-ghostwriting">
+                  Explore More
+                  <i className="fa-solid fa-arrow-right" />
+                </a>
+              </div>
+            </div>
+            {/* <div class="panel Informative">
 						<h3>Publishing</h3>
 						<div class="content">
 							<h4>Publishing.</h4>
@@ -1459,457 +1478,462 @@ const About = () => {
 							<a href="https://hireaghostwriter.co.uk/publishing-consultancy">Explore More<i class="fa-solid fa-arrow-right"></i></a>
 						</div>
 					</div> */}
-        <div className="panel Business scroll-div">
-          <h3>Business Book</h3>
-          <div className="content">
-            <h4>Business Book.</h4>
-            <p>
-              If you're an entrepreneur, executive, or business professional
-              looking to write a book but don't have the time or expertise, Hire
-              A Ghostwriter can help. We specialize in business book
-              ghostwriting, offering top-notch business writing services to help
-              you craft a book that captures your unique perspective and
-              insights.{" "}
-            </p>
-            <a href="https://hireaghostwriter.co.uk/business-book-ghostwriting-services">
-              Explore More
-              <i className="fa-solid fa-arrow-right" />
-            </a>
+            <div className="panel Business scroll-div">
+              <h3>Business Book</h3>
+              <div className="content">
+                <h4>Business Book.</h4>
+                <p>
+                  If you're an entrepreneur, executive, or business professional
+                  looking to write a book but don't have the time or expertise,
+                  Hire A Ghostwriter can help. We specialize in business book
+                  ghostwriting, offering top-notch business writing services to
+                  help you craft a book that captures your unique perspective
+                  and insights.{" "}
+                </p>
+                <a href="https://hireaghostwriter.co.uk/business-book-ghostwriting-services">
+                  Explore More
+                  <i className="fa-solid fa-arrow-right" />
+                </a>
+              </div>
+            </div>
+            <div className="panel Children">
+              <h3>Children Book</h3>
+              <div className="content">
+                <h4>Children Book.</h4>
+                <p>
+                  As the saying goes, children are the future, and their
+                  imaginations are limitless. Let us help you tap into that
+                  magic and create a timeless children's book that will
+                  captivate young readers for generations to come. Our team of
+                  children's book ghostwriters are not only expert wordsmiths
+                  but also skilled storytellers.{" "}
+                </p>
+                <a href="https://hireaghostwriter.co.uk/children-book">
+                  Explore More
+                  <i className="fa-solid fa-arrow-right" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="panel Children">
-          <h3>Children Book</h3>
-          <div className="content">
-            <h4>Children Book.</h4>
-            <p>
-              As the saying goes, children are the future, and their
-              imaginations are limitless. Let us help you tap into that magic
-              and create a timeless children's book that will captivate young
-              readers for generations to come. Our team of children's book
-              ghostwriters are not only expert wordsmiths but also skilled
-              storytellers.{" "}
-            </p>
-            <a href="https://hireaghostwriter.co.uk/children-book">
-              Explore More
-              <i className="fa-solid fa-arrow-right" />
-            </a>
+        <div className="container">
+          <div className="row mt-4">
+            <div className="col-md-12 text-center">
+              <a
+                      onClick={() => setIsOpen(true)}
+                className="view-pricing-txt various ani-btn"
+              >
+                Get Started
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
+                Let's Chat
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div className="container">
-      <div className="row mt-4">
-        <div className="col-md-12 text-center">
-          <a href="javascript:;" className="view-pricing-txt various ani-btn">
-            Get Started
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-          <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
-            Let's Chat
-            <i className="fa-solid fa-arrow-right" />
-          </a>
+        <img
+          src="assets/images/ghost-text.webp"
+          className="banner-right-text"
+          alt="banner-left-text"
+        />
+      </section>
+      {/* section#8 end */}
+      {/* section#9 start */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "\n    .client-big {\nborder: 4px solid #FCDF08;\nborder-radius: 100px;\npadding: 0;\n}\n",
+        }}
+      />
+      <section className="section9-home">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 col-sm-12 text-center">
+              <h2>
+                Let's Hear What Our Clients
+                <br /> Have To Say About Us
+              </h2>
+              <img
+                src="assets/images/testimonial-1.webp"
+                className="client-small client-1 "
+                alt="client-img1"
+              />
+              <img
+                src="assets/images/testimonial-2.webp"
+                className="client-small client-2"
+                alt="client-img1"
+              />
+              <img
+                src="assets/images/testimonial-3.webp"
+                className="client-small client-3"
+                alt="client-img1"
+              />
+              <img
+                src="assets/images/testimonial-4.webp"
+                className="client-small client-4"
+                alt="client-img1"
+              />
+              <ul className="clients-slider">
+                <li>
+                  <img
+                    src="assets/images/testimonial-8.webp"
+                    className="client-big"
+                    alt="client-img1"
+                  />
+                  <img
+                    src="assets/images/testimonial-content--big.webp"
+                    className="quote"
+                    alt="client-img1"
+                  />
+                  <div className="content">
+                    <p>
+                      Harrison’s support through the publishing phase was
+                      invaluable. From layout to launch, he made sure everything
+                      was executed professionally and efficiently. 'Hire A Ghost
+                      Writer' turned what felt like a daunting process into an
+                      exciting journey.
+                    </p>
+                    <a href="javascript:;">Sipho</a>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="assets/images/testimonial-9.webp"
+                    className="client-big"
+                    alt="client-img1"
+                  />
+                  <img
+                    src="assets/images/testimonial-content--big.webp"
+                    className="quote"
+                    alt="client-img1"
+                  />
+                  <div className="content">
+                    <p>
+                      Daniel guided me through both the editing and publishing
+                      process with skill, clarity, and unmatched dedication.
+                      Every revision made my story stronger, and the publishing
+                      support took the stress out of everything. With 'Hire A
+                      Ghost Writer', I felt seen, supported, and celebrated.
+                    </p>
+                    <a href="javascript:;">Fouseeni</a>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="assets/images/testimonial-7.webp"
+                    className="client-big"
+                    alt="client-img1"
+                  />
+                  <img
+                    src="assets/images/testimonial-content--big.webp"
+                    className="quote"
+                    alt="client-img1"
+                  />
+                  <div className="content">
+                    <p>
+                      When it came to editing, Daniel and his team were
+                      absolutely exceptional. He didn’t just polish my
+                      manuscript—he elevated it. His attention to detail and
+                      understanding of story structure were unmatched. Thanks to
+                      'Hire A Ghost Writer', my book is now the best version of
+                      itself.
+                    </p>
+                    <a href="javascript:;">Gabriel Phinda</a>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="assets/images/testimonial-6.webp"
+                    className="client-big"
+                    alt="client-img1"
+                  />
+                  <img
+                    src="assets/images/testimonial-content--big.webp"
+                    className="quote"
+                    alt="client-img1"
+                  />
+                  <div className="content">
+                    <p>
+                      From a blank page to a published book, Gary and Harrison
+                      were with me every step of the way. Writing, editing,
+                      publishing—everything was handled with care,
+                      professionalism, and real heart. 'Hire A Ghost Writer'
+                      didn’t just help me write a book—they made me an author
+                    </p>
+                    <a href="javascript:;">Rebecca</a>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="assets/images/testimonial-5.webp"
+                    className="client-big"
+                    alt="client-img1"
+                  />
+                  <img
+                    src="assets/images/testimonial-content--big.webp"
+                    className="quote"
+                    alt="client-img1"
+                  />
+                  <div className="content">
+                    <p>
+                      Working with Harrison was a game-changer. The writing
+                      brought my vision to life in ways I couldn't have
+                      imagined. He captured my voice, my story, and made it all
+                      sing on the page. As a published author, I’ve worked with
+                      many writers—but Harrison and the team stand out. 'Hire A
+                      Ghost Writer' is my go-to for any future projects
+                    </p>
+                    <a href="javascript:;">Keith L. Craig</a>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="assets/images/testimonial-content-big-img-2.webp"
+                    className="client-big"
+                    alt="client-img1"
+                  />
+                  <img
+                    src="assets/images/testimonial-content--big.webp"
+                    className="quote"
+                    alt="client-img1"
+                  />
+                  <div className="content">
+                    <p>
+                      It was my childhood dream to write a book and I actually
+                      wrote one but it wasn’t all that it could be. That’s when
+                      I contacted Hire A Ghostwriter and they were the absolute
+                      best.
+                    </p>
+                    <a href="javascript:;">Katherine Ellis</a>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="assets/images/testimonial-content-big-img.webp"
+                    className="client-big"
+                    alt="client-img1"
+                  />
+                  <img
+                    src="assets/images/testimonial-content--big.webp"
+                    className="quote"
+                    alt="client-img1"
+                  />
+                  <div className="content">
+                    <p>
+                      I’m an experienced IT expert and wanted to help people
+                      improve security of their enterprise systems, for which I
+                      wrote a book and Hire A Ghostwriter helped me improve and
+                      publish it.
+                    </p>
+                    <a href="javascript:;">Joe Stocker </a>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="assets/images/testimonial-content-big-img3.webp"
+                    className="client-big"
+                    alt="client-img1"
+                  />
+                  <img
+                    src="assets/images/testimonial-content--big.webp"
+                    className="quote"
+                    alt="client-img1"
+                  />
+                  <div className="content">
+                    <p>
+                      You guys are the best – I wish all businesses operated
+                      like you guys do. I wouldn’t be where I’m today if it
+                      weren’t for your team. Thanks a ton.
+                    </p>
+                    <a href="javascript:;">Mary Ann </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
         </div>
-      </div>
-    </div>
-    <img
-      src="assets/images/ghost-text.webp"
-      className="banner-right-text"
-      alt="banner-left-text"
-    />
-  </section>
-  {/* section#8 end */}
-  {/* section#9 start */}
-  <style
-    dangerouslySetInnerHTML={{
-      __html:
-        "\n    .client-big {\nborder: 4px solid #FCDF08;\nborder-radius: 100px;\npadding: 0;\n}\n"
-    }}
-  />
-  <section className="section9-home">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12 col-sm-12 text-center">
-          <h2>
-            Let's Hear What Our Clients
-            <br /> Have To Say About Us
-          </h2>
-          <img
-            src="assets/images/testimonial-1.webp"
-            className="client-small client-1 "
-            alt="client-img1"
-          />
-          <img
-            src="assets/images/testimonial-2.webp"
-            className="client-small client-2"
-            alt="client-img1"
-          />
-          <img
-            src="assets/images/testimonial-3.webp"
-            className="client-small client-3"
-            alt="client-img1"
-          />
-          <img
-            src="assets/images/testimonial-4.webp"
-            className="client-small client-4"
-            alt="client-img1"
-          />
-          <ul className="clients-slider">
-            <li>
+      </section>{" "}
+      {/* section#9 end */}
+      {/* section#10 start */}
+      <section className="section10-home">
+        {/*<img src="assets/images/ghost-text.webp" class="banner-left-text" alt="banner-left-text">*/}
+        <div className="container">
+          <div className="row">
+            <div
+              className="col-md-6 m-auto wow fadeInUp animated"
+              data-wow-duration="1.3s"
+              style={{
+                visibility: "visible",
+                animationDuration: "1.3s",
+                animationName: "fadeInUp",
+              }}
+            >
               <img
-                src="assets/images/testimonial-8.webp"
-                className="client-big"
-                alt="client-img1"
+                src="assets/images/CTA-bottom-book.webp"
+                alt="banner-book-shelf"
               />
-              <img
-                src="assets/images/testimonial-content--big.webp"
-                className="quote"
-                alt="client-img1"
-              />
-              <div className="content">
-                <p>
-                  Harrison’s support through the publishing phase was
-                  invaluable. From layout to launch, he made sure everything was
-                  executed professionally and efficiently. 'Hire A Ghost Writer'
-                  turned what felt like a daunting process into an exciting
-                  journey.
-                </p>
-                <a href="javascript:;">Sipho</a>
-              </div>
-            </li>
-            <li>
-              <img
-                src="assets/images/testimonial-9.webp"
-                className="client-big"
-                alt="client-img1"
-              />
-              <img
-                src="assets/images/testimonial-content--big.webp"
-                className="quote"
-                alt="client-img1"
-              />
-              <div className="content">
-                <p>
-                  Daniel guided me through both the editing and publishing
-                  process with skill, clarity, and unmatched dedication. Every
-                  revision made my story stronger, and the publishing support
-                  took the stress out of everything. With 'Hire A Ghost Writer',
-                  I felt seen, supported, and celebrated.
-                </p>
-                <a href="javascript:;">Fouseeni</a>
-              </div>
-            </li>
-            <li>
-              <img
-                src="assets/images/testimonial-7.webp"
-                className="client-big"
-                alt="client-img1"
-              />
-              <img
-                src="assets/images/testimonial-content--big.webp"
-                className="quote"
-                alt="client-img1"
-              />
-              <div className="content">
-                <p>
-                  When it came to editing, Daniel and his team were absolutely
-                  exceptional. He didn’t just polish my manuscript—he elevated
-                  it. His attention to detail and understanding of story
-                  structure were unmatched. Thanks to 'Hire A Ghost Writer', my
-                  book is now the best version of itself.
-                </p>
-                <a href="javascript:;">Gabriel Phinda</a>
-              </div>
-            </li>
-            <li>
-              <img
-                src="assets/images/testimonial-6.webp"
-                className="client-big"
-                alt="client-img1"
-              />
-              <img
-                src="assets/images/testimonial-content--big.webp"
-                className="quote"
-                alt="client-img1"
-              />
-              <div className="content">
-                <p>
-                  From a blank page to a published book, Gary and Harrison were
-                  with me every step of the way. Writing, editing,
-                  publishing—everything was handled with care, professionalism,
-                  and real heart. 'Hire A Ghost Writer' didn’t just help me
-                  write a book—they made me an author
-                </p>
-                <a href="javascript:;">Rebecca</a>
-              </div>
-            </li>
-            <li>
-              <img
-                src="assets/images/testimonial-5.webp"
-                className="client-big"
-                alt="client-img1"
-              />
-              <img
-                src="assets/images/testimonial-content--big.webp"
-                className="quote"
-                alt="client-img1"
-              />
-              <div className="content">
-                <p>
-                  Working with Harrison was a game-changer. The writing brought
-                  my vision to life in ways I couldn't have imagined. He
-                  captured my voice, my story, and made it all sing on the page.
-                  As a published author, I’ve worked with many writers—but
-                  Harrison and the team stand out. 'Hire A Ghost Writer' is my
-                  go-to for any future projects
-                </p>
-                <a href="javascript:;">Keith L. Craig</a>
-              </div>
-            </li>
-            <li>
-              <img
-                src="assets/images/testimonial-content-big-img-2.webp"
-                className="client-big"
-                alt="client-img1"
-              />
-              <img
-                src="assets/images/testimonial-content--big.webp"
-                className="quote"
-                alt="client-img1"
-              />
-              <div className="content">
-                <p>
-                  It was my childhood dream to write a book and I actually wrote
-                  one but it wasn’t all that it could be. That’s when I
-                  contacted Hire A Ghostwriter and they were the absolute best.
-                </p>
-                <a href="javascript:;">Katherine Ellis</a>
-              </div>
-            </li>
-            <li>
-              <img
-                src="assets/images/testimonial-content-big-img.webp"
-                className="client-big"
-                alt="client-img1"
-              />
-              <img
-                src="assets/images/testimonial-content--big.webp"
-                className="quote"
-                alt="client-img1"
-              />
-              <div className="content">
-                <p>
-                  I’m an experienced IT expert and wanted to help people improve
-                  security of their enterprise systems, for which I wrote a book
-                  and Hire A Ghostwriter helped me improve and publish it.
-                </p>
-                <a href="javascript:;">Joe Stocker </a>
-              </div>
-            </li>
-            <li>
-              <img
-                src="assets/images/testimonial-content-big-img3.webp"
-                className="client-big"
-                alt="client-img1"
-              />
-              <img
-                src="assets/images/testimonial-content--big.webp"
-                className="quote"
-                alt="client-img1"
-              />
-              <div className="content">
-                <p>
-                  You guys are the best – I wish all businesses operated like
-                  you guys do. I wouldn’t be where I’m today if it weren’t for
-                  your team. Thanks a ton.
-                </p>
-                <a href="javascript:;">Mary Ann </a>
-              </div>
-            </li>
-          </ul>
+            </div>
+            <div
+              className="col-md-6 m-auto wow fadeInRight   animated"
+              data-wow-duration="1.3s"
+              style={{
+                visibility: "visible",
+                animationDuration: "1.3s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <h2>
+                Start Your Journey Towards Becoming{" "}
+                <span>A Published Author</span>
+              </h2>
+              <p>Connect with us today and reach where you want to reach.</p>
+              <br />
+              <a
+                      onClick={() => setIsOpen(true)}
+                className="view-pricing-txt various ani-btn"
+              >
+                Get Started
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+              <a onClick={() => setIsActive(!isActive)} className="ani-btn">
+                Let's Chat
+                <i className="fa-solid fa-arrow-right" />
+              </a>
+              <br />
+              <a href="tel:+447418620480" className="call-now-btn">
+                <span>+44</span> 741 862 0480
+              </a>
+            </div>
+          </div>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      </div>
-    </div>
-  </section>{" "}
-  {/* section#9 end */}
-  {/* section#10 start */}
-  <section className="section10-home">
-    {/*<img src="assets/images/ghost-text.webp" class="banner-left-text" alt="banner-left-text">*/}
-    <div className="container">
-      <div className="row">
-        <div
-          className="col-md-6 m-auto wow fadeInUp animated"
-          data-wow-duration="1.3s"
-          style={{
-            visibility: "visible",
-            animationDuration: "1.3s",
-            animationName: "fadeInUp"
-          }}
-        >
-          <img
-            src="assets/images/CTA-bottom-book.webp"
-            alt="banner-book-shelf"
-          />
-        </div>
-        <div
-          className="col-md-6 m-auto wow fadeInRight   animated"
-          data-wow-duration="1.3s"
-          style={{
-            visibility: "visible",
-            animationDuration: "1.3s",
-            animationName: "fadeInUp"
-          }}
-        >
-          <h2>
-            Start Your Journey Towards Becoming <span>A Published Author</span>
-          </h2>
-          <p>Connect with us today and reach where you want to reach.</p>
-          <br />
-          <a href="javascript:;" className="view-pricing-txt various ani-btn">
-            Get Started
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-          <a href="javascript:void(Tawk_API.toggle())" className="ani-btn">
-            Let's Chat
-            <i className="fa-solid fa-arrow-right" />
-          </a>
-          <br />
-          <a href="tel:+447418620480" className="call-now-btn">
-            <span>+44</span> 741 862 0480
-          </a>
-        </div>
-      </div>
-    </div>
-    {/*<img src="assets/images/writer-text.webp" class="banner-right-text" alt="banner-left-text">*/}
-  </section>{" "}
-  {/* section#10 end */}
-  <br />
-  <br />
-  <br />
-  <br />
-  {/* <//?php
+        {/*<img src="assets/images/writer-text.webp" class="banner-right-text" alt="banner-left-text">*/}
+      </section>{" "}
+      {/* section#10 end */}
+      <br />
+      <br />
+      <br />
+      <br />
+      {/* <//?php
 			$bottomform = $_SERVER['HTTP_HOST']; 
 			$bottomform = $srcurl."bottomform.php"; 
 			include($bottomform); 
 			?>  */}
-  <footer>
-    <div className="container">
-      <div className="row mb-2">
-        <div className="col-md-6">
-          <div className="row mb-4">
-            <div className="col-md-4 m-auto">
-              <img
-                src="assets/images/footer-logo.webp"
-                className="logofooter"
-                alt="logo-footer"
-              />
-            </div>
-            <div className="col-md-8 m-auto">
-              <p>
-                Men cannot live by exchanging articles, but producing them. They
-                live by work not trade.
-              </p>
-            </div>
-          </div>
-          <hr />
+      <footer>
+        <div className="container">
           <div className="row mb-2">
-            <div className="col-md-4">
-              <h3>We Offer</h3>
-              <ul>
-                <li>
-                  <a href="https://hireaghostwriter.co.uk/memoir-autobiography-ghostwriting.php">
-                    GhostWriting
-                  </a>
-                </li>
-                <li>
-                  <a href="https://hireaghostwriter.co.uk/book-editing-formatting-services.php">
-                    Book formating
-                  </a>
-                </li>
-                <li>
-                  <a href="https://hireaghostwriter.co.uk/publishing-consultancy.php">
-                    Publishing
-                  </a>
-                </li>
-                <li>
-                  <a href="https://hireaghostwriter.co.uk/book-cover-design.php">
-                    Book Cover
-                  </a>
-                </li>
-                <li>
-                  <a href="https://hireaghostwriter.co.uk/book-editing-formatting-services.php">
-                    Editing
-                  </a>
-                </li>
-              </ul>
+            <div className="col-md-6">
+              <div className="row mb-4">
+                <div className="col-md-4 m-auto">
+                  <img
+                    src="assets/images/footer-logo.webp"
+                    className="logofooter"
+                    alt="logo-footer"
+                  />
+                </div>
+                <div className="col-md-8 m-auto">
+                  <p>
+                    Men cannot live by exchanging articles, but producing them.
+                    They live by work not trade.
+                  </p>
+                </div>
+              </div>
+              <hr />
+              <div className="row mb-2">
+                <div className="col-md-4">
+                  <h3>We Offer</h3>
+                  <ul>
+                    <li>
+                      <a href="https://hireaghostwriter.co.uk/memoir-autobiography-ghostwriting.php">
+                        GhostWriting
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://hireaghostwriter.co.uk/book-editing-formatting-services.php">
+                        Book formating
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://hireaghostwriter.co.uk/publishing-consultancy.php">
+                        Publishing
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://hireaghostwriter.co.uk/book-cover-design.php">
+                        Book Cover
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://hireaghostwriter.co.uk/book-editing-formatting-services.php">
+                        Editing
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-md-4">
+                  <h3>Main Links</h3>
+                  <ul>
+                    <li>
+                      <a href="https://hireaghostwriter.co.uk/">Home</a>
+                    </li>
+                    <li>
+                      <a href="https://hireaghostwriter.co.uk/about.php">
+                        AboutUs
+                      </a>
+                    </li>
+                    {/* <li><a href="https://hireaghostwriter.co.uk/blog">Blogs</a></li> */}
+                    <li>
+                      <a href="https://hireaghostwriter.co.uk/book-cover-samples.php">
+                        Portfolio
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://hireaghostwriter.co.uk/contact.php">
+                        Contact Us
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-md-4">
+                  <h3>Social Links</h3>
+                  <ul>
+                    <li>
+                      <a href="https://www.linkedin.com/company/hireaghostwriter/">
+                        LinkedIn
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/HireAGW">Twitter</a>
+                    </li>
+                    <li>
+                      <a href="https://www.pinterest.co.uk/HireAGhostwriter/">
+                        Pinterest
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/HireAGhostwriter1">
+                        Facebook
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/hire.a.ghostwriter/">
+                        Instagram
+                      </a>
+                    </li>
+                    {/* <li><a href="javascript:;">Contact Us</a></li> */}
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div className="col-md-4">
-              <h3>Main Links</h3>
-              <ul>
-                <li>
-                  <a href="https://hireaghostwriter.co.uk/">Home</a>
-                </li>
-                <li>
-                  <a href="https://hireaghostwriter.co.uk/about.php">AboutUs</a>
-                </li>
-                {/* <li><a href="https://hireaghostwriter.co.uk/blog">Blogs</a></li> */}
-                <li>
-                  <a href="https://hireaghostwriter.co.uk/book-cover-samples.php">
-                    Portfolio
-                  </a>
-                </li>
-                <li>
-                  <a href="https://hireaghostwriter.co.uk/contact.php">
-                    Contact Us
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-4">
-              <h3>Social Links</h3>
-              <ul>
-                <li>
-                  <a href="https://www.linkedin.com/company/hireaghostwriter/">
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/HireAGW">Twitter</a>
-                </li>
-                <li>
-                  <a href="https://www.pinterest.co.uk/HireAGhostwriter/">
-                    Pinterest
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.facebook.com/HireAGhostwriter1">
-                    Facebook
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/hire.a.ghostwriter/">
-                    Instagram
-                  </a>
-                </li>
-                {/* <li><a href="javascript:;">Contact Us</a></li> */}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 border-col">
-  
-
-
-
-
-
-
-{/* 
+            <div className="col-md-4 border-col">
+              {/* 
 <div className="form-container">
   <h4>BOOK WRITING AGENCY</h4>
   <h3>FOR ALL KINDS OF BOOK WRITING, PUBLISHING & MARKETING SERVICES</h3>
@@ -1999,254 +2023,232 @@ const About = () => {
   </form>
 </div> */}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <div className="form-container">
-            <h4>PROFESSIONAL GHOSTWRITING SERVICES</h4>
-            <h3>
-              HIRE A GHOSTWRITER:
-              <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING NEEDS
-            </h3>
-              <form className="contact-form" onSubmit={handleSubmit}>
-                        <div className="row">
-                          <div className="col-md-6 ">
-                            <input
-                              type="text"
-                              placeholder="Your Name"
-                              minLength={2}
-                              required
-                              value={name}
-                              onChange={(e) => setName(e.target.value)}
-                            />
-                          </div>
-                          <div className="col-md-6 ">
-                            <input
-                              type="email"
-                              placeholder="Your Email"
-                              required
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                            />
-                          </div>
-                          <div className="col-lg-12">
-                            <div className="fldset">
-                              <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
-                                <div className="flag-container">
-                                  {/* Country Code and Flag */}
-                                  <div
-                                    className="selected-flag"
-                                    onClick={toggleDropdown} // Toggle dropdown on click
-                                    tabIndex={0}
-                                    title={`${countryCode}`}
-                                  >
-                                    <div
-                                      className={`iti-flag ${
-                                        countries.find(
-                                          (c) => c.code === countryCode
-                                        )?.flag
-                                      }`}
-                                    />
-                                    <div className="selected-dial-code">
-                                      {countryCode}
-                                    </div>
-                                    <div className="iti-arrow" />
-                                  </div>
-
-                                  {/* Country Dropdown List (visible when dropdown is open) */}
-                                  {isDropdownOpen && (
-                                    <ul className="country-list">
-                                      {countries.map((country) => (
-                                        <li
-                                          key={country.code}
-                                          className="country"
-                                          onClick={() =>
-                                            handleCountrySelect(country.code)
-                                          } // Handle country selection
-                                        >
-                                          <div className="flag-box">
-                                            <div
-                                              className={`iti-flag ${country.flag}`}
-                                            />
-                                          </div>
-                                          <span className="country-name">
-                                            {country.name}
-                                          </span>
-                                          <span className="dial-code">
-                                            {country.code}
-                                          </span>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  )}
-                                </div>
-
-                                {/* Phone Number Input */}
-                                <input
-                                  type="tel"
-                                  placeholder="Contact Number"
-                                  required
-                                  minLength={7}
-                                  maxLength={15}
-                                  value={phoneNumber}
-                                  onChange={(e) =>
-                                    setPhoneNumber(e.target.value)
-                                  }
-                                  style={{ flex: 1 }}
-                                />
+              <div className="form-container">
+                <h4>PROFESSIONAL GHOSTWRITING SERVICES</h4>
+                <h3>
+                  HIRE A GHOSTWRITER:
+                  <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING NEEDS
+                </h3>
+                <form className="contact-form" onSubmit={handleSubmit}>
+                  <div className="row">
+                    <div className="col-md-6 ">
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        minLength={2}
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
+                    <div className="col-md-6 ">
+                      <input
+                        type="email"
+                        placeholder="Your Email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                    <div className="col-lg-12">
+                      <div className="fldset">
+                        <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
+                          <div className="flag-container">
+                            {/* Country Code and Flag */}
+                            <div
+                              className="selected-flag"
+                              onClick={toggleDropdown} // Toggle dropdown on click
+                              tabIndex={0}
+                              title={`${countryCode}`}
+                            >
+                              <div
+                                className={`iti-flag ${
+                                  countries.find((c) => c.code === countryCode)
+                                    ?.flag
+                                }`}
+                              />
+                              <div className="selected-dial-code">
+                                {countryCode}
                               </div>
+                              <div className="iti-arrow" />
                             </div>
+
+                            {/* Country Dropdown List (visible when dropdown is open) */}
+                            {isDropdownOpen && (
+                              <ul className="country-list">
+                                {countries.map((country) => (
+                                  <li
+                                    key={country.code}
+                                    className="country"
+                                    onClick={() =>
+                                      handleCountrySelect(country.code)
+                                    } // Handle country selection
+                                  >
+                                    <div className="flag-box">
+                                      <div
+                                        className={`iti-flag ${country.flag}`}
+                                      />
+                                    </div>
+                                    <span className="country-name">
+                                      {country.name}
+                                    </span>
+                                    <span className="dial-code">
+                                      {country.code}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
                           </div>
-                          <div className="col-md-6">
-                            <div className="form-floating">
-                              <label
-                                htmlFor="floatingSelect"
-                                style={{ color: "#000", marginTop: "10px" }}
-                              >
-                                Select Service
-                              </label>
-                              <select
-                                className="form-select"
-                                id="floatingSelect"
-                                required
-                                name="Services"
-                                value={service} // Bind service to state
-                                onChange={(e) => setService(e.target.value)} // Update service on change
-                              >
-                                <option value="ghostwriting">
-                                  ghostwriting
-                                </option>
-                                <option value="book cover">book cover</option>
-                                <option value="illustration">
-                                  illustration
-                                </option>
-                                <option value="publishing">publishing</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-floating">
-                              <label
-                                htmlFor="floatingSelect"
-                                style={{ color: "#000", marginTop: "10px" }}
-                              >
-                                Select Budget
-                              </label>
-                              <select
-                                className="form-select"
-                                id="floatingSelect"
-                                required
-                                name="budget"
-                                value={budget} // Bind budget to state
-                                onChange={(e) => setBudget(e.target.value)} // Update budget on change
-                              >
-                                <option value="£999-£2000">£999-£2000</option>
-                                <option value="£2000-£3000">£2000-£3000</option>
-                                <option value="£3000-£4000">£3000-£4000</option>
-                                <option value="£4000-£5000">£4000-£5000</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-md-12">
-                            <button type="submit" className="submit">
-                              Submit
-                              <i className="fa-solid fa-arrow-right" />
-                            </button>
-                          </div>
+
+                          {/* Phone Number Input */}
+                          <input
+                            type="tel"
+                            placeholder="Contact Number"
+                            required
+                            minLength={7}
+                            maxLength={15}
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            style={{ flex: 1 }}
+                          />
                         </div>
-                      </form>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <label
+                          htmlFor="floatingSelect"
+                          style={{ color: "#000", marginTop: "10px" }}
+                        >
+                          Select Service
+                        </label>
+                        <select
+                          className="form-select"
+                          id="floatingSelect"
+                          required
+                          name="Services"
+                          value={service} // Bind service to state
+                          onChange={(e) => setService(e.target.value)} // Update service on change
+                        >
+                          <option value="ghostwriting">ghostwriting</option>
+                          <option value="book cover">book cover</option>
+                          <option value="illustration">illustration</option>
+                          <option value="publishing">publishing</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <label
+                          htmlFor="floatingSelect"
+                          style={{ color: "#000", marginTop: "10px" }}
+                        >
+                          Select Budget
+                        </label>
+                        <select
+                          className="form-select"
+                          id="floatingSelect"
+                          required
+                          name="budget"
+                          value={budget} // Bind budget to state
+                          onChange={(e) => setBudget(e.target.value)} // Update budget on change
+                        >
+                          <option value="£999-£2000">£999-£2000</option>
+                          <option value="£2000-£3000">£2000-£3000</option>
+                          <option value="£3000-£4000">£3000-£4000</option>
+                          <option value="£4000-£5000">£4000-£5000</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="col-md-12">
+                      <button type="submit" className="submit">
+                        Submit
+                        <i className="fa-solid fa-arrow-right" />
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <hr />
-      <div className="row">
-        <div className="col-md-6">
+          <hr />
           <div className="row">
             <div className="col-md-6">
-              <ul className="contact-details">
-                <li>
-                  <a href="javascript:;">
-                    <i className="fa fa-map-marker" aria-hidden="true" />
-                    <strong>Head office:</strong>124 City Road London ,<br />
-                    United Kingdom EC1V 2NP
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:;">
-                    <i className="fa fa-map-marker" aria-hidden="true" />
-                    <strong>Corporate office:</strong>4900 California Ave,
-                    <br /> Bakersfield, CA 93309, USA
-                  </a>
-                </li>
-              </ul>
+              <div className="row">
+                <div className="col-md-6">
+                  <ul className="contact-details">
+                    <li>
+                      <a href="javascript:;">
+                        <i className="fa fa-map-marker" aria-hidden="true" />
+                        <strong>Head office:</strong>124 City Road London ,
+                        <br />
+                        United Kingdom EC1V 2NP
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <i className="fa fa-map-marker" aria-hidden="true" />
+                        <strong>Corporate office:</strong>4900 California Ave,
+                        <br /> Bakersfield, CA 93309, USA
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-md-6">
+                  <ul className="contact-details">
+                    <li>
+                      <a href="tel:+447418620480">
+                        <i className="fa fa-phone-square" aria-hidden="true" />
+                        +44 7418620480 (UK)
+                      </a>
+                    </li>
+                    <li>
+                      <a href="tel:+14099043404">
+                        <i className="fa fa-phone-square" aria-hidden="true" />
+                        +1 (409) 9043404 (USA)
+                      </a>
+                    </li>
+                    <li>
+                      <a href="mailto:info@hireaghostwriter.co.uk">
+                        <i className="fa fa-envelope-o" aria-hidden="true" />
+                        info@hireaghostwriter.co.uk
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div className="col-md-6">
-              <ul className="contact-details">
+            <div className="col-md-3 float-right">
+              <ul className="contact-details pri">
                 <li>
-                  <a href="tel:+447418620480">
-                    <i className="fa fa-phone-square" aria-hidden="true" />
-                    +44 7418620480 (UK)
-                  </a>
+                  <p>
+                    <a href="https://hireaghostwriter.co.uk/terms-conditions.php">
+                      Terms &amp; Conditions
+                    </a>{" "}
+                    &nbsp; | &nbsp;{" "}
+                    <a href="https://hireaghostwriter.co.uk/privacypolicy.php">
+                      Privacy Policy
+                    </a>
+                  </p>
                 </li>
                 <li>
-                  <a href="tel:+14099043404">
-                    <i className="fa fa-phone-square" aria-hidden="true" />
-                    +1 (409) 9043404 (USA)
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:info@hireaghostwriter.co.uk">
-                    <i className="fa fa-envelope-o" aria-hidden="true" />
-                    info@hireaghostwriter.co.uk
+                  <a href="javascript:;">
+                    © 2025 Hire A Ghost Writer. All rights reserved.
                   </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        <div className="col-md-3 float-right">
-          <ul className="contact-details pri">
-            <li>
-              <p>
-                <a href="https://hireaghostwriter.co.uk/terms-conditions.php">
-                  Terms &amp; Conditions
-                </a>{" "}
-                &nbsp; | &nbsp;{" "}
-                <a href="https://hireaghostwriter.co.uk/privacypolicy.php">
-                  Privacy Policy
-                </a>
-              </p>
-            </li>
-            <li>
-              <a href="javascript:;">
-                © 2025 Hire A Ghost Writer. All rights reserved.
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-  {/*float form start*/}
- <div className={`floatbutton ${isActive ? 'active' : ''}`}>
-
-      {/* <div className="floatbutton"> */}
+      </footer>
+      {/*float form start*/}
+      <div className={`floatbutton ${isActive ? "active" : ""}`}>
+        {/* <div className="floatbutton"> */}
         <div className="btns_wrap">
           <a href="javascript:void(Tawk_API.toggle())" className="chat_wrap">
             <span className="icoo">
-<SiGooglemessages />
+              <SiGooglemessages />
             </span>
             {/* <SiGooglemessages /> */}
 
@@ -2254,7 +2256,7 @@ const About = () => {
           </a>
           <a href="tel:+447418620480" className="call_wrap">
             <span className="icoo">
-<BsTelephone />
+              <BsTelephone />
 
               {/* <i className="fa fa-phone" /> */}
             </span>
@@ -2264,13 +2266,10 @@ const About = () => {
         {/* <div className="clickbutton">
           <div className="crossplus"> LET'S GET STARTED</div>
         </div> */}
-        
-              <div
-        className="clickbutton"
-        onClick={() => setIsActive(!isActive)}
-      >
-        <div className="crossplus">LET'S GET STARTED</div>
-      </div>
+
+        <div className="clickbutton" onClick={() => setIsActive(!isActive)}>
+          <div className="crossplus">LET'S GET STARTED</div>
+        </div>
         <div className="banner-form">
           <h3>
             Sign Up Now &amp; <br />
@@ -5395,183 +5394,167 @@ const About = () => {
           </div>
         </div>
       </div>
-
-<div className={`form-container popupform   ${isOpen ? "visibleit": "hidden"}`} id="popupform">
-          {/* <a href="javascript:;" title="" className="close" /> */}
-                <a
-        href="#"
-        title="Close"
-        className="close"
-        onClick={(e) => {
-          e.preventDefault();
-          setIsOpen(false);    
-          console.log("Popup closed, isOpen:", isOpen);
-        }}
-        // onClick={setIsOpen(false)}
+      <div
+        className={`form-container popupform   ${
+          isOpen ? "visibleit" : "hidden"
+        }`}
+        id="popupform"
       >
-        &times;
-      </a>
-          <h4>PROFESSIONAL GHOSTWRITING SERVICES</h4>
-          <h3>
-            HIRE A GHOSTWRITER:
-            <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING NEEDS
-          </h3>
+        {/* <a href="javascript:;" title="" className="close" /> */}
+        <a
+          href="#"
+          title="Close"
+          className="close"
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpen(false);
+            console.log("Popup closed, isOpen:", isOpen);
+          }}
+          // onClick={setIsOpen(false)}
+        >
+          &times;
+        </a>
+        <h4>PROFESSIONAL GHOSTWRITING SERVICES</h4>
+        <h3>
+          HIRE A GHOSTWRITER:
+          <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING NEEDS
+        </h3>
         <form className="contact-form" onSubmit={handleSubmit}>
-                        <div className="row">
-                          <div className="col-md-6 ">
-                            <input
-                              type="text"
-                              placeholder="Your Name"
-                              minLength={2}
-                              required
-                              value={name}
-                              onChange={(e) => setName(e.target.value)}
-                            />
-                          </div>
-                          <div className="col-md-6 ">
-                            <input
-                              type="email"
-                              placeholder="Your Email"
-                              required
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                            />
-                          </div>
-                          <div className="col-lg-12">
-                            <div className="fldset">
-                              <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
-                                <div className="flag-container">
-                                  {/* Country Code and Flag */}
-                                  <div
-                                    className="selected-flag"
-                                    onClick={toggleDropdown} // Toggle dropdown on click
-                                    tabIndex={0}
-                                    title={`${countryCode}`}
-                                  >
-                                    <div
-                                      className={`iti-flag ${
-                                        countries.find(
-                                          (c) => c.code === countryCode
-                                        )?.flag
-                                      }`}
-                                    />
-                                    <div className="selected-dial-code">
-                                      {countryCode}
-                                    </div>
-                                    <div className="iti-arrow" />
-                                  </div>
+          <div className="row">
+            <div className="col-md-6 ">
+              <input
+                type="text"
+                placeholder="Your Name"
+                minLength={2}
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="col-md-6 ">
+              <input
+                type="email"
+                placeholder="Your Email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="col-lg-12">
+              <div className="fldset">
+                <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
+                  <div className="flag-container">
+                    {/* Country Code and Flag */}
+                    <div
+                      className="selected-flag"
+                      onClick={toggleDropdown} // Toggle dropdown on click
+                      tabIndex={0}
+                      title={`${countryCode}`}
+                    >
+                      <div
+                        className={`iti-flag ${
+                          countries.find((c) => c.code === countryCode)?.flag
+                        }`}
+                      />
+                      <div className="selected-dial-code">{countryCode}</div>
+                      <div className="iti-arrow" />
+                    </div>
 
-                                  {/* Country Dropdown List (visible when dropdown is open) */}
-                                  {isDropdownOpen && (
-                                    <ul className="country-list">
-                                      {countries.map((country) => (
-                                        <li
-                                          key={country.code}
-                                          className="country"
-                                          onClick={() =>
-                                            handleCountrySelect(country.code)
-                                          } // Handle country selection
-                                        >
-                                          <div className="flag-box">
-                                            <div
-                                              className={`iti-flag ${country.flag}`}
-                                            />
-                                          </div>
-                                          <span className="country-name">
-                                            {country.name}
-                                          </span>
-                                          <span className="dial-code">
-                                            {country.code}
-                                          </span>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  )}
-                                </div>
-
-                                {/* Phone Number Input */}
-                                <input
-                                  type="tel"
-                                  placeholder="Contact Number"
-                                  required
-                                  minLength={7}
-                                  maxLength={15}
-                                  value={phoneNumber}
-                                  onChange={(e) =>
-                                    setPhoneNumber(e.target.value)
-                                  }
-                                  style={{ flex: 1 }}
-                                />
-                              </div>
+                    {/* Country Dropdown List (visible when dropdown is open) */}
+                    {isDropdownOpen && (
+                      <ul className="country-list">
+                        {countries.map((country) => (
+                          <li
+                            key={country.code}
+                            className="country"
+                            onClick={() => handleCountrySelect(country.code)} // Handle country selection
+                          >
+                            <div className="flag-box">
+                              <div className={`iti-flag ${country.flag}`} />
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-floating">
-                              <label
-                                htmlFor="floatingSelect"
-                                style={{ color: "#000", marginTop: "10px" }}
-                              >
-                                Select Service
-                              </label>
-                              <select
-                                className="form-select"
-                                id="floatingSelect"
-                                required
-                                name="Services"
-                                value={service} // Bind service to state
-                                onChange={(e) => setService(e.target.value)} // Update service on change
-                              >
-                                <option value="ghostwriting">
-                                  ghostwriting
-                                </option>
-                                <option value="book cover">book cover</option>
-                                <option value="illustration">
-                                  illustration
-                                </option>
-                                <option value="publishing">publishing</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-floating">
-                              <label
-                                htmlFor="floatingSelect"
-                                style={{ color: "#000", marginTop: "10px" }}
-                              >
-                                Select Budget
-                              </label>
-                              <select
-                                className="form-select"
-                                id="floatingSelect"
-                                required
-                                name="budget"
-                                value={budget} // Bind budget to state
-                                onChange={(e) => setBudget(e.target.value)} // Update budget on change
-                              >
-                                <option value="£999-£2000">£999-£2000</option>
-                                <option value="£2000-£3000">£2000-£3000</option>
-                                <option value="£3000-£4000">£3000-£4000</option>
-                                <option value="£4000-£5000">£4000-£5000</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-md-12">
-                            <button type="submit" className="submit">
-                              Submit
-                              <i className="fa-solid fa-arrow-right" />
-                            </button>
-                          </div>
-                        </div>
-                      </form>
-        </div>
+                            <span className="country-name">{country.name}</span>
+                            <span className="dial-code">{country.code}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
 
-<div
-  className="cus-overlay"
-  style={{ display: isOpen ? "block" : "none" }}
-/>
-</>
+                  {/* Phone Number Input */}
+                  <input
+                    type="tel"
+                    placeholder="Contact Number"
+                    required
+                    minLength={7}
+                    maxLength={15}
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    style={{ flex: 1 }}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="form-floating">
+                <label
+                  htmlFor="floatingSelect"
+                  style={{ color: "#000", marginTop: "10px" }}
+                >
+                  Select Service
+                </label>
+                <select
+                  className="form-select"
+                  id="floatingSelect"
+                  required
+                  name="Services"
+                  value={service} // Bind service to state
+                  onChange={(e) => setService(e.target.value)} // Update service on change
+                >
+                  <option value="ghostwriting">ghostwriting</option>
+                  <option value="book cover">book cover</option>
+                  <option value="illustration">illustration</option>
+                  <option value="publishing">publishing</option>
+                </select>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="form-floating">
+                <label
+                  htmlFor="floatingSelect"
+                  style={{ color: "#000", marginTop: "10px" }}
+                >
+                  Select Budget
+                </label>
+                <select
+                  className="form-select"
+                  id="floatingSelect"
+                  required
+                  name="budget"
+                  value={budget} // Bind budget to state
+                  onChange={(e) => setBudget(e.target.value)} // Update budget on change
+                >
+                  <option value="£999-£2000">£999-£2000</option>
+                  <option value="£2000-£3000">£2000-£3000</option>
+                  <option value="£3000-£4000">£3000-£4000</option>
+                  <option value="£4000-£5000">£4000-£5000</option>
+                </select>
+              </div>
+            </div>
+            <div className="col-md-12">
+              <button type="submit" className="submit">
+                Submit
+                <i className="fa-solid fa-arrow-right" />
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div
+        className="cus-overlay"
+        style={{ display: isOpen ? "block" : "none" }}
+      />
+    </>
+  );
+};
 
-  )
-}
-
-export default About
+export default About;

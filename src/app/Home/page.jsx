@@ -62,8 +62,7 @@ function Home() {
         console.log(status);
       } else {
         setStatus(`❌ Error: ${data.error || "Failed to send message"}`);
-                console.log(status);
-
+        console.log(status);
       }
     } catch (error) {
       setStatus(`❌ Error: ${error.message}`);
@@ -106,13 +105,14 @@ function Home() {
       setStatus(`❌ Error: ${error.message}`);
     }
   };
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const countries = [
     { code: "+92", name: "Pakistan", flag: "pk" },
     { code: "+1", name: "United States", flag: "us" },
     { code: "+44", name: "United Kingdom", flag: "gb" },
     { code: "+91", name: "India", flag: "in" },
   ];
+  const [activePanel, setActivePanel] = useState("fiction");
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -701,14 +701,14 @@ function Home() {
                     </p>
                     <br />
                     <a
-                      href="javascript:;"
+                      onClick={() => setIsOpen(true)}
                       className="view-pricing-txt various ani-btn"
                     >
                       Get a quote
                       <i className="fa-solid fa-arrow-right" />
                     </a>
                     <a
-                      href="javascript:void(Tawk_API.toggle())"
+                      onClick={() => setIsActive(!isActive)}
                       className="ani-btn"
                     >
                       Let's Chat
@@ -736,17 +736,10 @@ function Home() {
                     published author.
                   </p>
                   <a
-                    href="javascript:;"
+                    onClick={() => setIsActive(!isActive)}
                     className="view-pricing-txt various ani-btn"
                   >
                     Let's Start
-                    <i className="fa-solid fa-arrow-right" />
-                  </a>
-                  <a
-                    href="javascript:void(Tawk_API.toggle())"
-                    className="ani-btn"
-                  >
-                    Let's Chat
                     <i className="fa-solid fa-arrow-right" />
                   </a>
                   <a href="tel:+447418620480" className="call-now-btn">
@@ -811,16 +804,13 @@ function Home() {
                     </div>
                   </div>
                   <a
-                    href="javascript:;"
+                    onClick={() => setIsOpen(true)}
                     className="view-pricing-txt various ani-btn"
                   >
                     Get Started
                     <i className="fa-solid fa-arrow-right" />
                   </a>
-                  <a
-                    href="javascript:void(Tawk_API.toggle())"
-                    className="ani-btn"
-                  >
+                  <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                     Let's Chat
                     <i className="fa-solid fa-arrow-right" />
                   </a>
@@ -863,17 +853,7 @@ function Home() {
                 <div className="col-md-7 m-auto">
                   <h3>Get Your Book Written At Affordable Rates</h3>
                   <p>We are here to take your book to the next level.</p>
-                  <a
-                    href="javascript:;"
-                    className="view-pricing-txt various ani-btn"
-                  >
-                    Let's Start
-                    <i className="fa-solid fa-arrow-right" />
-                  </a>
-                  <a
-                    href="javascript:void(Tawk_API.toggle())"
-                    className="ani-btn"
-                  >
+                  <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                     Let's Chat
                     <i className="fa-solid fa-arrow-right" />
                   </a>
@@ -1618,7 +1598,7 @@ function Home() {
               <div className="row mt-4 mb-4">
                 <div className="col-md-12 text-center">
                   <a
-                    href="javascript:;"
+                    onClick={() => setIsOpen(true)}
                     className="view-pricing-txt various ani-btn"
                   >
                     Get Started
@@ -1626,7 +1606,7 @@ function Home() {
                   </a>
                   <a
                     className="chat_btn"
-                    href="javascript:void(Tawk_API.toggle())"
+                    onClick={() => setIsActive(!isActive)}
                   >
                     Let's Chat
                     <i className="fa-solid fa-arrow-right" />
@@ -1661,12 +1641,19 @@ function Home() {
                 </div>
               </div>
             </div>
+
             <div className="container">
               <div className="container-2">
-                <div className="panel fiction">
+                <div
+                  className={`panel fiction ${
+                    activePanel === "fiction" ? "active" : ""
+                  }`}
+                  onMouseEnter={() => setActivePanel("fiction")}
+                  onClick={() => setActivePanel("fiction")}
+                >
                   <h3>Fiction</h3>
                   <div className="content">
-                    <h4>Fiction.</h4>
+                    <h4>Fiction</h4>
                     <p>
                       Our comprehensive fiction ghostwriting service includes
                       everything you need to write a successful novel, from
@@ -1675,24 +1662,40 @@ function Home() {
                       and character outline and conduct extensive research to
                       ensure that your story is well-crafted and believable.
                     </p>
-                    <a href="https://hireaghostwriter.co.uk/fiction-ghostwriting">
-                      Explore More
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
                   </div>
                 </div>
-                {/* <div class="panel Children">
-						<h3>Book Cover.</h3>
-						<div class="content">
-							<h4>Book Cover Design</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							<a href="https://hireaghostwriter.co.uk/book-cover-design">Explore More<i class="fa-solid fa-arrow-right"></i></a>
-						</div>
-					</div> */}
-                <div className="panel non-fiction">
+
+                <div
+                  className={`panel Children ${
+                    activePanel === "Children" ? "active" : ""
+                  }`}
+                  onMouseEnter={() => setActivePanel("Children")}
+                  onClick={() => setActivePanel("Children")}
+                >
+                  <h3>Children Book</h3>
+                  <div className="content">
+                    <h4>Children Book</h4>
+                    <p>
+                      As the saying goes, children are the future, and their
+                      imaginations are limitless. Let us help you tap into that
+                      magic and create a timeless children's book that will
+                      captivate young readers for generations to come. Our team
+                      of children's book ghostwriters are not only expert
+                      wordsmiths but also skilled storytellers.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  className={`panel non-fiction ${
+                    activePanel === "non-fiction" ? "active" : ""
+                  }`}
+                  onMouseEnter={() => setActivePanel("non-fiction")}
+                  onClick={() => setActivePanel("non-fiction")}
+                >
                   <h3>Non Fiction</h3>
                   <div className="content">
-                    <h4>Non Fiction.</h4>
+                    <h4>Non Fiction</h4>
                     <p>
                       As a leading ghostwriting company, we have a team of
                       experienced non-fiction book writers who can turn your
@@ -1701,13 +1704,16 @@ function Home() {
                       closely with you to understand your vision, your audience,
                       and your writing style.
                     </p>
-                    <a href="https://hireaghostwriter.co.uk/nonfiction-ghostwriting">
-                      Explore More
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
                   </div>
                 </div>
-                <div className="panel biography">
+
+                <div
+                  className={`panel biography ${
+                    activePanel === "biography" ? "active" : ""
+                  }`}
+                  onMouseEnter={() => setActivePanel("biography")}
+                  onClick={() => setActivePanel("biography")}
+                >
                   <h3>Biography</h3>
                   <div className="content">
                     <h4>Biography</h4>
@@ -1719,72 +1725,62 @@ function Home() {
                       expertise to create a memoir that is authentic, engaging,
                       and reflective of your unique voice.
                     </p>
-                    <a href="https://hireaghostwriter.co.uk/memoir-autobiography-ghostwriting">
-                      Explore More
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
                   </div>
                 </div>
-                {/* <div class="panel Informative">
-						<h3>Publishing</h3>
-						<div class="content">
-							<h4>Publishing.</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							<a href="https://hireaghostwriter.co.uk/publishing-consultancy">Explore More<i class="fa-solid fa-arrow-right"></i></a>
-						</div>
-					</div> */}
-                <div className="panel Business scroll-div">
+
+                <div
+                  className={`panel Informative ${
+                    activePanel === "Informative" ? "active" : ""
+                  }`}
+                  onMouseEnter={() => setActivePanel("Informative")}
+                  onClick={() => setActivePanel("Informative")}
+                >
+                  <h3>Publishing</h3>
+                  <div className="content">
+                    <h4>Publishing</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  className={`panel Business ${
+                    activePanel === "Business" ? "active" : ""
+                  }`}
+                  onMouseEnter={() => setActivePanel("Business")}
+                  onClick={() => setActivePanel("Business")}
+                >
                   <h3>Business Book</h3>
                   <div className="content">
-                    <h4>Business Book.</h4>
+                    <h4>Business Book</h4>
                     <p>
                       If you're an entrepreneur, executive, or business
                       professional looking to write a book but don't have the
                       time or expertise, Hire A Ghostwriter can help. We
                       specialize in business book ghostwriting, offering
                       top-notch business writing services to help you craft a
-                      book that captures your unique perspective and insights.{" "}
+                      book that captures your unique perspective and insights.
                     </p>
-                    <a href="https://hireaghostwriter.co.uk/business-book-ghostwriting-services">
-                      Explore More
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
-                  </div>
-                </div>
-                <div className="panel Children active">
-                  <h3>Children Book</h3>
-                  <div className="content">
-                    <h4>Children Book.</h4>
-                    <p>
-                      As the saying goes, children are the future, and their
-                      imaginations are limitless. Let us help you tap into that
-                      magic and create a timeless children's book that will
-                      captivate young readers for generations to come. Our team
-                      of children's book ghostwriters are not only expert
-                      wordsmiths but also skilled storytellers.{" "}
-                    </p>
-                    <a href="https://hireaghostwriter.co.uk/children-book">
-                      Explore More
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
                   </div>
                 </div>
               </div>
             </div>
+
             <div className="container">
               <div className="row mt-4">
                 <div className="col-md-12 text-center">
                   <a
-                    href="javascript:;"
+                    onClick={() => setIsOpen(true)}
                     className="view-pricing-txt various ani-btn"
                   >
                     Get Started
                     <i className="fa-solid fa-arrow-right" />
                   </a>
-                  <a
-                    href="javascript:void(Tawk_API.toggle())"
-                    className="ani-btn"
-                  >
+                  <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                     Let's Chat
                     <i className="fa-solid fa-arrow-right" />
                   </a>
@@ -1797,8 +1793,6 @@ function Home() {
               alt="banner-left-text"
             />
           </section>
-          {/* section#8 end */}
-          {/* section#9 start */}
           <style
             dangerouslySetInnerHTML={{
               __html:
@@ -2172,16 +2166,13 @@ function Home() {
                   </p>
                   <br />
                   <a
-                    href="javascript:;"
+                    onClick={() => setIsOpen(true)}
                     className="view-pricing-txt various ani-btn"
                   >
                     Get Started
                     <i className="fa-solid fa-arrow-right" />
                   </a>
-                  <a
-                    href="javascript:void(Tawk_API.toggle())"
-                    className="ani-btn"
-                  >
+                  <a onClick={() => setIsActive(!isActive)} className="ani-btn">
                     Let's Chat
                     <i className="fa-solid fa-arrow-right" />
                   </a>
@@ -2358,153 +2349,147 @@ function Home() {
                       <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING
                       NEEDS
                     </h3>
-                  <form className="contact-form" onSubmit={handleSubmit}>
-                        <div className="row">
-                          <div className="col-md-6 ">
-                            <input
-                              type="text"
-                              placeholder="Your Name"
-                              minLength={2}
-                              required
-                              value={name}
-                              onChange={(e) => setName(e.target.value)}
-                            />
-                          </div>
-                          <div className="col-md-6 ">
-                            <input
-                              type="email"
-                              placeholder="Your Email"
-                              required
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                            />
-                          </div>
-                          <div className="col-lg-12">
-                            <div className="fldset">
-                              <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
-                                <div className="flag-container">
-                                  {/* Country Code and Flag */}
+                    <form className="contact-form" onSubmit={handleSubmit}>
+                      <div className="row">
+                        <div className="col-md-6 ">
+                          <input
+                            type="text"
+                            placeholder="Your Name"
+                            minLength={2}
+                            required
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                          />
+                        </div>
+                        <div className="col-md-6 ">
+                          <input
+                            type="email"
+                            placeholder="Your Email"
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                          />
+                        </div>
+                        <div className="col-lg-12">
+                          <div className="fldset">
+                            <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
+                              <div className="flag-container">
+                                {/* Country Code and Flag */}
+                                <div
+                                  className="selected-flag"
+                                  onClick={toggleDropdown} // Toggle dropdown on click
+                                  tabIndex={0}
+                                  title={`${countryCode}`}
+                                >
                                   <div
-                                    className="selected-flag"
-                                    onClick={toggleDropdown} // Toggle dropdown on click
-                                    tabIndex={0}
-                                    title={`${countryCode}`}
-                                  >
-                                    <div
-                                      className={`iti-flag ${
-                                        countries.find(
-                                          (c) => c.code === countryCode
-                                        )?.flag
-                                      }`}
-                                    />
-                                    <div className="selected-dial-code">
-                                      {countryCode}
-                                    </div>
-                                    <div className="iti-arrow" />
+                                    className={`iti-flag ${
+                                      countries.find(
+                                        (c) => c.code === countryCode
+                                      )?.flag
+                                    }`}
+                                  />
+                                  <div className="selected-dial-code">
+                                    {countryCode}
                                   </div>
-
-                                  {/* Country Dropdown List (visible when dropdown is open) */}
-                                  {isDropdownOpen && (
-                                    <ul className="country-list">
-                                      {countries.map((country) => (
-                                        <li
-                                          key={country.code}
-                                          className="country"
-                                          onClick={() =>
-                                            handleCountrySelect(country.code)
-                                          } // Handle country selection
-                                        >
-                                          <div className="flag-box">
-                                            <div
-                                              className={`iti-flag ${country.flag}`}
-                                            />
-                                          </div>
-                                          <span className="country-name">
-                                            {country.name}
-                                          </span>
-                                          <span className="dial-code">
-                                            {country.code}
-                                          </span>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  )}
+                                  <div className="iti-arrow" />
                                 </div>
 
-                                {/* Phone Number Input */}
-                                <input
-                                  type="tel"
-                                  placeholder="Contact Number"
-                                  required
-                                  minLength={7}
-                                  maxLength={15}
-                                  value={phoneNumber}
-                                  onChange={(e) =>
-                                    setPhoneNumber(e.target.value)
-                                  }
-                                  style={{ flex: 1 }}
-                                />
+                                {/* Country Dropdown List (visible when dropdown is open) */}
+                                {isDropdownOpen && (
+                                  <ul className="country-list">
+                                    {countries.map((country) => (
+                                      <li
+                                        key={country.code}
+                                        className="country"
+                                        onClick={() =>
+                                          handleCountrySelect(country.code)
+                                        } // Handle country selection
+                                      >
+                                        <div className="flag-box">
+                                          <div
+                                            className={`iti-flag ${country.flag}`}
+                                          />
+                                        </div>
+                                        <span className="country-name">
+                                          {country.name}
+                                        </span>
+                                        <span className="dial-code">
+                                          {country.code}
+                                        </span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
                               </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-floating">
-                              <label
-                                htmlFor="floatingSelect"
-                                style={{ color: "#000", marginTop: "10px" }}
-                              >
-                                Select Service
-                              </label>
-                              <select
-                                className="form-select"
-                                id="floatingSelect"
+
+                              {/* Phone Number Input */}
+                              <input
+                                type="tel"
+                                placeholder="Contact Number"
                                 required
-                                name="Services"
-                                value={service} // Bind service to state
-                                onChange={(e) => setService(e.target.value)} // Update service on change
-                              >
-                                <option value="ghostwriting">
-                                  ghostwriting
-                                </option>
-                                <option value="book cover">book cover</option>
-                                <option value="illustration">
-                                  illustration
-                                </option>
-                                <option value="publishing">publishing</option>
-                              </select>
+                                minLength={7}
+                                maxLength={15}
+                                value={phoneNumber}
+                                onChange={(e) => setPhoneNumber(e.target.value)}
+                                style={{ flex: 1 }}
+                              />
                             </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-floating">
-                              <label
-                                htmlFor="floatingSelect"
-                                style={{ color: "#000", marginTop: "10px" }}
-                              >
-                                Select Budget
-                              </label>
-                              <select
-                                className="form-select"
-                                id="floatingSelect"
-                                required
-                                name="budget"
-                                value={budget} // Bind budget to state
-                                onChange={(e) => setBudget(e.target.value)} // Update budget on change
-                              >
-                                <option value="£999-£2000">£999-£2000</option>
-                                <option value="£2000-£3000">£2000-£3000</option>
-                                <option value="£3000-£4000">£3000-£4000</option>
-                                <option value="£4000-£5000">£4000-£5000</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-md-12">
-                            <button type="submit" className="submit">
-                              Submit
-                              <i className="fa-solid fa-arrow-right" />
-                            </button>
                           </div>
                         </div>
-                      </form>
+                        <div className="col-md-6">
+                          <div className="form-floating">
+                            <label
+                              htmlFor="floatingSelect"
+                              style={{ color: "#000", marginTop: "10px" }}
+                            >
+                              Select Service
+                            </label>
+                            <select
+                              className="form-select"
+                              id="floatingSelect"
+                              required
+                              name="Services"
+                              value={service} // Bind service to state
+                              onChange={(e) => setService(e.target.value)} // Update service on change
+                            >
+                              <option value="ghostwriting">ghostwriting</option>
+                              <option value="book cover">book cover</option>
+                              <option value="illustration">illustration</option>
+                              <option value="publishing">publishing</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="form-floating">
+                            <label
+                              htmlFor="floatingSelect"
+                              style={{ color: "#000", marginTop: "10px" }}
+                            >
+                              Select Budget
+                            </label>
+                            <select
+                              className="form-select"
+                              id="floatingSelect"
+                              required
+                              name="budget"
+                              value={budget} // Bind budget to state
+                              onChange={(e) => setBudget(e.target.value)} // Update budget on change
+                            >
+                              <option value="£999-£2000">£999-£2000</option>
+                              <option value="£2000-£3000">£2000-£3000</option>
+                              <option value="£3000-£4000">£3000-£4000</option>
+                              <option value="£4000-£5000">£4000-£5000</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="col-md-12">
+                          <button type="submit" className="submit">
+                            Submit
+                            <i className="fa-solid fa-arrow-right" />
+                          </button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -2615,10 +2600,6 @@ function Home() {
             <span> +44 741 862 0480 </span>
           </a>
         </div>
-        {/* <div className="clickbutton">
-          <div className="crossplus"> LET'S GET STARTED</div>
-        </div> */}
-
         <div className="clickbutton" onClick={() => setIsActive(!isActive)}>
           <div className="crossplus">LET'S GET STARTED</div>
         </div>
@@ -5746,7 +5727,6 @@ function Home() {
           </div>
         </div>
       </div>
-      
       <div
         className={`form-container popupform   ${
           isOpen ? "visibleit" : "hidden"
@@ -5773,440 +5753,139 @@ function Home() {
           <br /> A ONE-STOP-SOLUTION FOR ALL YOUR BOOK PUBLISHING NEEDS
         </h3>
         <form className="contact-form" onSubmit={handleSubmit}>
-                        <div className="row">
-                          <div className="col-md-6 ">
-                            <input
-                              type="text"
-                              placeholder="Your Name"
-                              minLength={2}
-                              required
-                              value={name}
-                              onChange={(e) => setName(e.target.value)}
-                            />
-                          </div>
-                          <div className="col-md-6 ">
-                            <input
-                              type="email"
-                              placeholder="Your Email"
-                              required
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                            />
-                          </div>
-                          <div className="col-lg-12">
-                            <div className="fldset">
-                              <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
-                                <div className="flag-container">
-                                  {/* Country Code and Flag */}
-                                  <div
-                                    className="selected-flag"
-                                    onClick={toggleDropdown} // Toggle dropdown on click
-                                    tabIndex={0}
-                                    title={`${countryCode}`}
-                                  >
-                                    <div
-                                      className={`iti-flag ${
-                                        countries.find(
-                                          (c) => c.code === countryCode
-                                        )?.flag
-                                      }`}
-                                    />
-                                    <div className="selected-dial-code">
-                                      {countryCode}
-                                    </div>
-                                    <div className="iti-arrow" />
-                                  </div>
+          <div className="row">
+            <div className="col-md-6 ">
+              <input
+                type="text"
+                placeholder="Your Name"
+                minLength={2}
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="col-md-6 ">
+              <input
+                type="email"
+                placeholder="Your Email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="col-lg-12">
+              <div className="fldset">
+                <div className="intl-tel-input allow-dropdown separate-dial-code iti-sdc-3">
+                  <div className="flag-container">
+                    {/* Country Code and Flag */}
+                    <div
+                      className="selected-flag"
+                      onClick={toggleDropdown} // Toggle dropdown on click
+                      tabIndex={0}
+                      title={`${countryCode}`}
+                    >
+                      <div
+                        className={`iti-flag ${
+                          countries.find((c) => c.code === countryCode)?.flag
+                        }`}
+                      />
+                      <div className="selected-dial-code">{countryCode}</div>
+                      <div className="iti-arrow" />
+                    </div>
 
-                                  {/* Country Dropdown List (visible when dropdown is open) */}
-                                  {isDropdownOpen && (
-                                    <ul className="country-list">
-                                      {countries.map((country) => (
-                                        <li
-                                          key={country.code}
-                                          className="country"
-                                          onClick={() =>
-                                            handleCountrySelect(country.code)
-                                          } // Handle country selection
-                                        >
-                                          <div className="flag-box">
-                                            <div
-                                              className={`iti-flag ${country.flag}`}
-                                            />
-                                          </div>
-                                          <span className="country-name">
-                                            {country.name}
-                                          </span>
-                                          <span className="dial-code">
-                                            {country.code}
-                                          </span>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  )}
-                                </div>
+                    {/* Country Dropdown List (visible when dropdown is open) */}
+                    {isDropdownOpen && (
+                      <ul className="country-list">
+                        {countries.map((country) => (
+                          <li
+                            key={country.code}
+                            className="country"
+                            onClick={() => handleCountrySelect(country.code)} // Handle country selection
+                          >
+                            <div className="flag-box">
+                              <div className={`iti-flag ${country.flag}`} />
+                            </div>
+                            <span className="country-name">{country.name}</span>
+                            <span className="dial-code">{country.code}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
 
-                                {/* Phone Number Input */}
-                                <input
-                                  type="tel"
-                                  placeholder="Contact Number"
-                                  required
-                                  minLength={7}
-                                  maxLength={15}
-                                  value={phoneNumber}
-                                  onChange={(e) =>
-                                    setPhoneNumber(e.target.value)
-                                  }
-                                  style={{ flex: 1 }}
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-floating">
-                              <label
-                                htmlFor="floatingSelect"
-                                style={{ color: "#000", marginTop: "10px" }}
-                              >
-                                Select Service
-                              </label>
-                              <select
-                                className="form-select"
-                                id="floatingSelect"
-                                required
-                                name="Services"
-                                value={service} // Bind service to state
-                                onChange={(e) => setService(e.target.value)} // Update service on change
-                              >
-                                <option value="ghostwriting">
-                                  ghostwriting
-                                </option>
-                                <option value="book cover">book cover</option>
-                                <option value="illustration">
-                                  illustration
-                                </option>
-                                <option value="publishing">publishing</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-floating">
-                              <label
-                                htmlFor="floatingSelect"
-                                style={{ color: "#000", marginTop: "10px" }}
-                              >
-                                Select Budget
-                              </label>
-                              <select
-                                className="form-select"
-                                id="floatingSelect"
-                                required
-                                name="budget"
-                                value={budget} // Bind budget to state
-                                onChange={(e) => setBudget(e.target.value)} // Update budget on change
-                              >
-                                <option value="£999-£2000">£999-£2000</option>
-                                <option value="£2000-£3000">£2000-£3000</option>
-                                <option value="£3000-£4000">£3000-£4000</option>
-                                <option value="£4000-£5000">£4000-£5000</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-md-12">
-                            <button type="submit" className="submit">
-                              Submit
-                              <i className="fa-solid fa-arrow-right" />
-                            </button>
-                          </div>
-                        </div>
-                      </form>
+                  {/* Phone Number Input */}
+                  <input
+                    type="tel"
+                    placeholder="Contact Number"
+                    required
+                    minLength={7}
+                    maxLength={15}
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    style={{ flex: 1 }}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="form-floating">
+                <label
+                  htmlFor="floatingSelect"
+                  style={{ color: "#000", marginTop: "10px" }}
+                >
+                  Select Service
+                </label>
+                <select
+                  className="form-select"
+                  id="floatingSelect"
+                  required
+                  name="Services"
+                  value={service} // Bind service to state
+                  onChange={(e) => setService(e.target.value)} // Update service on change
+                >
+                  <option value="ghostwriting">ghostwriting</option>
+                  <option value="book cover">book cover</option>
+                  <option value="illustration">illustration</option>
+                  <option value="publishing">publishing</option>
+                </select>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="form-floating">
+                <label
+                  htmlFor="floatingSelect"
+                  style={{ color: "#000", marginTop: "10px" }}
+                >
+                  Select Budget
+                </label>
+                <select
+                  className="form-select"
+                  id="floatingSelect"
+                  required
+                  name="budget"
+                  value={budget} // Bind budget to state
+                  onChange={(e) => setBudget(e.target.value)} // Update budget on change
+                >
+                  <option value="£999-£2000">£999-£2000</option>
+                  <option value="£2000-£3000">£2000-£3000</option>
+                  <option value="£3000-£4000">£3000-£4000</option>
+                  <option value="£4000-£5000">£4000-£5000</option>
+                </select>
+              </div>
+            </div>
+            <div className="col-md-12">
+              <button type="submit" className="submit">
+                Submit
+                <i className="fa-solid fa-arrow-right" />
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
       <div
         className="cus-overlay"
         style={{ display: isOpen ? "block" : "none" }}
-      />{" "}
-      {/* <iframe
-        height={0}
-        width={0}
-        style={{ display: "none", visibility: "hidden" }}
       />
-      <div id="wl8a1qgod97o1757974395354" className="widget-visible">
-        <iframe
-          src="about:blank"
-          frameBorder={0}
-          scrolling="no"
-          width="64px"
-          height="60px"
-          style={{
-            outline: "none !important",
-            visibility: "visible !important",
-            resize: "none !important",
-            boxShadow: "none !important",
-            overflow: "visible !important",
-            background: "none !important",
-            opacity: "1 !important",
-            filter: "alpha(opacity=100) !important",
-            msFilter:
-              "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
-            MzOpacity: "1 !important",
-            KhtmlOpacity: "1 !important",
-            top: "auto !important",
-            right: "20px !important",
-            bottom: "20px !important",
-            left: "auto !important",
-            position: "fixed !important",
-            border: "0 !important",
-            minHeight: "60px !important",
-            minWidth: "64px !important",
-            maxHeight: "60px !important",
-            maxWidth: "64px !important",
-            padding: "0 !important",
-            margin: "0 !important",
-            MozTransitionProperty: "none !important",
-            WebkitTransitionProperty: "none !important",
-            OTransitionProperty: "none !important",
-            transitionProperty: "none !important",
-            transform: "none !important",
-            WebkitTransform: "none !important",
-            msTransform: "none !important",
-            width: "64px !important",
-            height: "60px !important",
-            display: "block !important",
-            zIndex: "1000003 !important",
-            backgroundColor: "transparent !important",
-            cursor: "none !important",
-            float: "none !important",
-            borderRadius: "unset !important",
-            pointerEvents: "auto !important",
-            clip: "auto !important",
-            colorScheme: "light !important",
-          }}
-          id="y0bpvg0ldlb1757974395507"
-          className=""
-          title="chat widget"
-        />
-        <iframe
-          src="about:blank"
-          frameBorder={0}
-          scrolling="no"
-          width="350px"
-          height="520px"
-          style={{
-            outline: "none !important",
-            visibility: "visible !important",
-            resize: "none !important",
-            boxShadow: "none !important",
-            overflow: "visible !important",
-            background: "none !important",
-            opacity: "1 !important",
-            filter: "alpha(opacity=100) !important",
-            msFilter:
-              "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
-            MzOpacity: "1 !important",
-            KhtmlOpacity: "1 !important",
-            top: "auto !important",
-            right: "20px !important",
-            bottom: "98px !important",
-            left: "auto !important",
-            position: "fixed !important",
-            border: "0 !important",
-            minHeight: "520px !important",
-            minWidth: "350px !important",
-            maxHeight: "520px !important",
-            maxWidth: "350px !important",
-            padding: "0 !important",
-            margin: "0 !important",
-            MozTransitionProperty: "none !important",
-            WebkitTransitionProperty: "none !important",
-            OTransitionProperty: "none !important",
-            transitionProperty: "none !important",
-            transform: "none !important",
-            WebkitTransform: "none !important",
-            msTransform: "none !important",
-            width: "350px !important",
-            height: "520px !important",
-            display: "none !important",
-            zIndex: "1000002 !important",
-            backgroundColor: "transparent !important",
-            cursor: "none !important",
-            float: "none !important",
-            borderRadius: "18px !important",
-            pointerEvents: "auto !important",
-            clip: "auto !important",
-            colorScheme: "light !important",
-          }}
-          id="fvr008jeaqa81757974395704"
-          className=""
-          title="chat widget"
-        />
-        <iframe
-          src="about:blank"
-          frameBorder={0}
-          scrolling="no"
-          height="30px"
-          style={{
-            outline: "none !important",
-            visibility: "visible !important",
-            resize: "none !important",
-            boxShadow: "none !important",
-            overflow: "visible !important",
-            background: "none !important",
-            opacity: "1 !important",
-            filter: "alpha(opacity=100) !important",
-            msFilter:
-              "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
-            MzOpacity: "1 !important",
-            KhtmlOpacity: "1 !important",
-            top: "auto !important",
-            right: "20px !important",
-            bottom: "30px !important",
-            left: "auto !important",
-            position: "fixed !important",
-            border: "0 !important",
-            minHeight: "45px !important",
-            minWidth: "350px !important",
-            maxHeight: "45px !important",
-            maxWidth: "350px !important",
-            padding: "0 !important",
-            margin: "0 !important",
-            MozTransitionProperty: "none !important",
-            WebkitTransitionProperty: "none !important",
-            OTransitionProperty: "none !important",
-            transitionProperty: "none !important",
-            transform: "none !important",
-            WebkitTransform: "none !important",
-            msTransform: "none !important",
-            width: "350px !important",
-            height: "45px !important",
-            display: "none !important",
-            zIndex: "1000002 !important",
-            backgroundColor: "transparent !important",
-            cursor: "none !important",
-            float: "none !important",
-            borderRadius: "unset !important",
-            pointerEvents: "auto !important",
-            clip: "auto !important",
-            colorScheme: "light !important",
-          }}
-          id="b1ut2asqq1bk1757974395752"
-          className=""
-          title="chat widget"
-        />
-        <iframe
-          src="about:blank"
-          frameBorder={0}
-          scrolling="no"
-          width="360px"
-          height="145px"
-          style={{
-            outline: "none !important",
-            visibility: "visible !important",
-            resize: "none !important",
-            boxShadow: "none !important",
-            overflow: "visible !important",
-            background: "none !important",
-            opacity: "1 !important",
-            filter: "alpha(opacity=100) !important",
-            msFilter:
-              "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
-            MzOpacity: "1 !important",
-            KhtmlOpacity: "1 !important",
-            top: "auto !important",
-            right: "20px !important",
-            bottom: 90,
-            left: "auto !important",
-            position: "fixed !important",
-            border: "0 !important",
-            minHeight: "145px !important",
-            minWidth: "360px !important",
-            maxHeight: "145px !important",
-            maxWidth: "360px !important",
-            padding: "0 !important",
-            margin: "0 !important",
-            MozTransitionProperty: "none !important",
-            WebkitTransitionProperty: "none !important",
-            OTransitionProperty: "none !important",
-            transitionProperty: "none !important",
-            transform: "none !important",
-            WebkitTransform: "none !important",
-            msTransform: "none !important",
-            width: "360px !important",
-            height: "145px !important",
-            display: "none !important",
-            zIndex: "auto !important",
-            backgroundColor: "transparent !important",
-            cursor: "none !important",
-            float: "none !important",
-            borderRadius: "unset !important",
-            pointerEvents: "auto !important",
-            clip: "auto !important",
-            colorScheme: "light !important",
-          }}
-          id="inhjbis8531757974395591"
-          className=""
-          title="chat widget"
-        />
-        <iframe
-          src="about:blank"
-          frameBorder={0}
-          scrolling="no"
-          width="124px"
-          height="95px"
-          style={{
-            outline: "none !important",
-            visibility: "visible !important",
-            resize: "none !important",
-            boxShadow: "none !important",
-            overflow: "visible !important",
-            background: "none !important",
-            opacity: "1 !important",
-            filter: "alpha(opacity=100) !important",
-            msFilter:
-              "progid:DXImageTransform.Microsoft.Alpha(Opacity 1}) !important",
-            MzOpacity: "1 !important",
-            KhtmlOpacity: "1 !important",
-            top: "auto !important",
-            right: "0px !important",
-            bottom: "30px !important",
-            left: "auto !important",
-            position: "fixed !important",
-            border: "0 !important",
-            minHeight: "95px !important",
-            minWidth: "124px !important",
-            maxHeight: "95px !important",
-            maxWidth: "124px !important",
-            padding: "0 !important",
-            margin: "0px 0 0 0 !important",
-            MozTransitionProperty: "none !important",
-            WebkitTransitionProperty: "none !important",
-            OTransitionProperty: "none !important",
-            transitionProperty: "none !important",
-            transform: "rotate(0deg) translateZ(0)",
-            WebkitTransform: "rotate(0deg) translateZ(0)",
-            msTransform: "rotate(0deg) translateZ(0)",
-            width: "124px !important",
-            height: "95px !important",
-            display: "block !important",
-            zIndex: "1000004 !important",
-            backgroundColor: "transparent !important",
-            cursor: "none !important",
-            float: "none !important",
-            borderRadius: "unset !important",
-            pointerEvents: "auto !important",
-            clip: "auto !important",
-            colorScheme: "light !important",
-            MozTransform: "rotate(0deg) translateZ(0)",
-            OTransform: "rotate(0deg) translateZ(0)",
-            transformOrigin: 0,
-            MozTransformOrigin: 0,
-            WebkitTransformOrigin: 0,
-            OTransformOrigin: 0,
-            msTransformOrigin: 0,
-          }}
-          id="jqfjgc91sujg1757974395551"
-          className=""
-          title="chat widget"
-        />
-      </div> */}
     </>
   );
 }
