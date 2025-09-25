@@ -848,7 +848,7 @@ function Home() {
                 your projects.{" "}
               </p>
               <Embla slide={bookImages} />
-              <a
+              {/* <a
                 href="https://hireaghostwriter.co.uk/book-cover-samples"
                 className="ani-btn"
               >
@@ -861,7 +861,7 @@ function Home() {
               >
                 Check Binance
                 <i className="fa-solid fa-arrow-right" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -912,7 +912,7 @@ function Home() {
                 your projects.{" "}
               </p>
               <Embla slide={App} />
-              <a
+              {/* <a
                 href="https://hireaghostwriter.co.uk/book-cover-samples"
                 className="ani-btn"
               >
@@ -925,7 +925,7 @@ function Home() {
               >
                 Check Binance
                 <i className="fa-solid fa-arrow-right" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -992,7 +992,7 @@ function Home() {
                 your projects.{" "}
               </p>
               <Embla slide={Caro} />
-              <a
+              {/* <a
                 href="https://hireaghostwriter.co.uk/book-cover-samples"
                 className="ani-btn"
               >
@@ -1005,7 +1005,7 @@ function Home() {
               >
                 Check Binance
                 <i className="fa-solid fa-arrow-right" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -1056,7 +1056,7 @@ function Home() {
                 your projects.{" "}
               </p>
               <Embla slide={Pro} />
-              <a
+              {/* <a
                 href="https://hireaghostwriter.co.uk/book-cover-samples"
                 className="ani-btn"
               >
@@ -1069,7 +1069,7 @@ function Home() {
               >
                 Check Binance
                 <i className="fa-solid fa-arrow-right" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -1136,7 +1136,7 @@ function Home() {
                 your projects.{" "}
               </p>
               <Embla slide={UI} />
-              <a
+              {/* <a
                 href="https://hireaghostwriter.co.uk/book-cover-samples"
                 className="ani-btn"
               >
@@ -1149,7 +1149,7 @@ function Home() {
               >
                 Check Binance
                 <i className="fa-solid fa-arrow-right" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -1200,7 +1200,7 @@ function Home() {
                 your projects.{" "}
               </p>
               <Embla slide={Pos} />
-              <a
+              {/* <a
                 href="https://hireaghostwriter.co.uk/book-cover-samples"
                 className="ani-btn"
               >
@@ -1213,7 +1213,7 @@ function Home() {
               >
                 Check Binance
                 <i className="fa-solid fa-arrow-right" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -1280,7 +1280,7 @@ function Home() {
                 your projects.{" "}
               </p>
               <EmblaVid slide={Vid} />
-              <a
+              {/* <a
                 href="https://hireaghostwriter.co.uk/book-cover-samples"
                 className="ani-btn"
               >
@@ -1293,7 +1293,7 @@ function Home() {
               >
                 Check Binance
                 <i className="fa-solid fa-arrow-right" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -1344,7 +1344,7 @@ function Home() {
                 your projects.{" "}
               </p>
               <EmblaVid slide={Reel} />
-              <a
+              {/* <a
                 href="https://hireaghostwriter.co.uk/book-cover-samples"
                 className="ani-btn"
               >
@@ -1357,7 +1357,7 @@ function Home() {
               >
                 Check Binance
                 <i className="fa-solid fa-arrow-right" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -5096,109 +5096,6 @@ function Home() {
               </button>
             </div>
           </div>
-        </form>{" "}
-        <form
-          action="webpages/bottomFormController.php"
-          className="contact-form"
-          method="POST"
-        >
-          <div className="row">
-            <div className="col-md-6 ">
-              <input
-                type="text"
-                placeholder="Full Name"
-                required=""
-                name="Name"
-              />
-            </div>
-            <div className="col-md-6 ">
-              <input
-                type="email"
-                name="Email"
-                required=""
-                placeholder="Email Address*"
-              />
-            </div>
-            <div className="col-md-12 ">
-              <input
-                name="Number"
-                id="phone-country"
-                className="phone-popup phone-country"
-                required=""
-                type="text"
-                minLength={10}
-                maxLength={10}
-                autoComplete="off"
-                // onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) )"
-                placeholder="Phone Number"
-                style={{ marginBottom: "10px!important" }}
-              />
-            </div>
-            <div className="col-md-6 ">
-              <div className="form-floating">
-                {/* <select
-                    className="form-select"
-                    id="floatingSelect"
-                    name="Services"
-                    required=""
-                    aria-label="Floating label select example"
-                  >
-                    <option selected="" value="ghostwriting">
-                      ghostwriting
-                    </option>
-                    <option value="book cover">book cover</option>
-                    <option value="illustration">illustration</option>
-                    <option value="publishing">publishing</option>
-                  </select> */}
-                <label htmlFor="floatingSelect" style={{ color: "#000" }}>
-                  Select Service
-                </label>
-              </div>
-            </div>
-            <div className="col-md-6 ">
-              <div className="form-floating">
-                {/* <select
-                    className="form-select"
-                    id="floatingSelect"
-                    name="budget"
-                    required=""
-                    aria-label="Floating label select example"
-                  >
-                    <option selected="" value="£999-£2000">
-                      £999-£2000
-                    </option>
-                    <option value="£2000-£3000">£2000-£3000</option>
-                    <option value="£3000-£4000">£3000-£4000</option>
-                    <option value="£4000-£5000">£4000-£5000</option>
-                  </select> */}
-                <label htmlFor="floatingSelect" style={{ color: "#000" }}>
-                  Select Budget
-                </label>
-              </div>
-            </div>
-            <input type="hidden" name="hiddencapcha" defaultValue="" />
-            <input type="hidden" name="ctry" defaultValue="" />
-            <input type="hidden" name="pc" defaultValue="" />
-            <input type="hidden" name="cip" />
-            <input
-              type="hidden"
-              id="location"
-              name="locationURL"
-              defaultValue="http://hireaghostwriter.co.uk/book-cover-design.php"
-            />
-            <input
-              type="hidden"
-              id="location"
-              name="Form_name"
-              defaultValue="Floating Form"
-            />
-            <div className="col-md-12">
-              <button type="submit" className="submit">
-                Submit
-                <i className="fa-solid fa-arrow-right my-icon" />
-              </button>
-            </div>
-          </div>
         </form>
       </div>
 
@@ -5211,7 +5108,7 @@ function Home() {
         width={0}
         style={{ display: "none", visibility: "hidden" }}
       />
-      <div id="wl8a1qgod97o1757974395354" className="widget-visiblef">
+      {/* <div id="wl8a1qgod97o1757974395354" className="widget-visiblef">
         <iframe
           src="about:blank"
           frameBorder={0}
@@ -5488,7 +5385,7 @@ function Home() {
           className=""
           title="chat widget"
         />
-      </div>
+      </div> */}
     </>
   );
 }
